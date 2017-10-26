@@ -27,9 +27,13 @@ Ubuntu Server adalah sistem operasi turunan dari Linux Ubuntu yang di desain khu
 
 ![pilih install](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/2.pilih_install_ubuntu_server.PNG)
 
-- Pilih bahasa untuk OS Ubuntu Server
+- Pilih bahasa untuk OS Ubuntu Server.
 
-![menu bahasa OS](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/3.pilih_bahasa_ubuntu_server.PNG)
+![pilih bahasa OS](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/3.pilih_bahasa_ubuntu_server.PNG)
+
+- Pilih lokasi yang nanti akan digunakan saat menentukan timezone dan system locale.
+
+![pilih lokasi](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/4.pilih_lokasi.PNG)
 
 ### 2. Langkah Instalasi Ubuntu Desktop
 
