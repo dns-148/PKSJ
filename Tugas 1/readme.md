@@ -22,6 +22,14 @@
 
 ![menu pilih bahasa](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/1.pilih_bahasa.PNG)
 
+- Pilih 'Install Ubuntu Server' pada menu installasi.
+
+![menu pilih bahasa](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/2.pilih_install_ubuntu_server.PNG)
+
+- Pilih bahasa untuk OS Ubuntu Server
+
+![menu pilih bahasa](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/3.pilih_bahasa_ubuntu_server.PNG)
+
 ### 2. Langkah Instalasi Ubuntu Desktop
 
 ### 3. Langkah Instalasi SSH Server
