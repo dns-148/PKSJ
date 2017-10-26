@@ -48,6 +48,22 @@ Ncrack dilepaskan sebagai alat standalone dan bisa diunduh dari bagian di bawah 
 
 ![pilih lokasi](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/4.pilih_lokasi.PNG)
 
+- Bila dari kombinasi antara bahasa OS yang dipilih dan lokasi yang dipilih tidak ditemukan locale yang tepat, maka pengguna dapat memilih locale secara manual.
+
+![pilih locale](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/5.pilih_konfigurasi_lokal.PNG)
+
+- Konfigurasi layout dari keyboard, pilih 'Yes' bila ingin melakukan test untuk mendapatkan layout keyboard, pilih 'No' untuk memilih layout yang disediakan.
+
+![pilih layout keyboard](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/6.konfigurasi_keyboard.PNG)
+
+- Bila memilih 'Yes', maka akan muncul serangkaian test untuk mencocokan character yang ditampilkan dengan yang berada pada keyboard. Kemudian dari hasil test tersebut didapatkan layout keyboard.
+
+![hasil test keyboard](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/7.konfigurasi_keyboard2.PNG)
+
+- Input nama yang dikendahaki untuk hostname, hostname berfungsi sebagai pengenal sistem pada jaringan.
+
+![input hostname](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/9.konfigurasi_network.PNG)
+
 ### 2. Langkah Instalasi Ubuntu Desktop
 
 ### 3. Langkah Instalasi SSH Server
