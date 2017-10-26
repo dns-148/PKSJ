@@ -53,7 +53,7 @@ Fungsi SSH Server: Menggantikan telnet, rlogin, ftp, dan rsh, salah satu fungsi 
 sudo apt-get install openssh-server
 </pre>
 
-- Ketik 'Y' untuk melanjutkan instalasi:
+- Ketik 'Y' dan tekan untuk melanjutkan instalasi:
 
 ![ketik Y](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/%5Bssh%5D02.PNG)
 
