@@ -10,18 +10,23 @@ Ubuntu Server adalah sistem operasi turunan dari Linux Ubuntu yang di desain khu
 ### Ubuntu Desktop
 Ubuntu merupakan salah satu distribusi Linux yang berbasiskan Debian dan didistribusikan sebagai software bebas. Ubuntu Desktop ditujukan untuk user yang memakai Ubuntu sebagai end user. Pada Ubuntu Desktop telahterinstall beberapa aplikasi, diantaranya: LibreOffice, Mozilla Firefox, dan Mozilla Thunderbird. Ubuntu Desktop mengompile paket menggunakan fitur gcc seperti PIE dan proteksi Buffer Overflow untuk memproteksi software.
 
-### SSH Server
-Fungsi SSH Server: Menggantikan telnet, rlogin, ftp, dan rsh, salah satu fungsi utamanya adalah untuk menjamin keamanan dalam melakukan transmisi data pada suatu jaringan. Melakukan enkripsi terhadap data yang dikirim. Protokol untuk pertukaran data dalam suatu jaringan. Otentifikasi, mekanisme untuk memastikan pengirim dan penerima adalah benar dan aman. Kerahasiaan, memastikan kerahasiaan data yang dikirim agar hanya diketahui oleh penerima dan pengirim.
+### OpenSSH Server
+OpenSSH adalah satu set aplikasi komputer yang bisa mendukung sesi komunikasi terenkripsi pada jaringan komputer menggunakan protokol ssh. Awalnya aplikasi ini dikembangkan sebagai aplikasi open source yang menjadi alternatif dari aplikasi serupa yang berbayar. OpenSSH dikembangkan dan merupakan bagian dari proyek OpenBSD. Dalam perkembangan selanjutnya, OpenSSH tidak hanya memberikan aplikasi remote shell melalui ssh atau remote eksekusi program saja, tapi bisa digunakan untuk tunnelling atau setup vpn antara dua jaringan.
 
-### THC Hydra
+### THC-Hydra
+THC-Hydra adalah login cracker paralel yang mendukung penyerangan terhadap berbagai macam protokol. THC-Hydra sangat cepat dan fleksibel, dan mudah untuk menambahkan modul-modul baru. Alat ini memungkinkan para periset dan konsultan keamanan untuk menunjukkan betapa mudahnya mendapatkan akses yang tidak sah ke sistem jarak jauh.
+THC-Hydra mendukung: Cisco AAA, Cisco auth, Cisco enable, CVS, FTP, HTTP(S)-FORM-GET, HTTP(S)-FORM-POST, HTTP(S)-GET, HTTP(S)-HEAD, HTTP-Proxy, ICQ, IMAP, IRC, LDAP, MS-SQL, MySQL, NNTP, Oracle Listener, Oracle SID, PC-Anywhere, PC-NFS, POP3, PostgreSQL, RDP, Rexec, Rlogin, Rsh, SIP, SMB(NT), SMTP, SMTP Enum, SNMP v1+v2+v3, SOCKS5, SSH (v1 and v2), SSHKEY, Subversion, Teamspeak (TS2), Telnet, VMware-Auth, VNC and XMPP.
 
-### NCrack
+### Ncrack
+Ncrack adalah alat cracking otentikasi jaringan berkecepatan tinggi. Ini dibangun untuk membantu perusahaan mengamankan jaringan mereka dengan secara proaktif menguji semua host dan perangkat jaringan mereka dengan kata kunci yang buruk. Profesional keamanan juga mengandalkan Ncrack saat mengaudit klien mereka. Ncrack dirancang menggunakan pendekatan modular, sintaks baris perintah yang mirip dengan Nmap dan mesin dinamis yang dapat menyesuaikan perilakunya berdasarkan umpan balik jaringan. Ini memungkinkan dilakukannya audit berskala besar yang cepat namun dapat diandalkan dari beberapa host.
+
+Fitur Ncrack mencakup antarmuka yang sangat fleksibel yang memberi pengguna kontrol penuh atas operasi jaringan, memungkinkan serangan bruteforcing yang sangat canggih, template waktu untuk kemudahan penggunaan, interaksi runtime yang mirip dengan Nmap dan banyak lagi. Protokol yang didukung meliputi RDP, SSH, HTTP (S), SMB, POP3 (S), VNC, FTP, SIP, Redis, PostgreSQL, MySQL, dan Telnet.
+
+Ncrack dilepaskan sebagai alat standalone dan bisa diunduh dari bagian di bawah ini. Pastikan untuk membaca halaman manual Ncrack untuk memahami penggunaan Ncrack. Jika Anda seorang pengembang dan ingin menulis modul Ncrack Anda sendiri, pelajari Panduan Pengembang Ncrack akan menjadi langkah pertama.
 
 ### Medusa
 
 ### Fail2Ban
-
-###
 
 ## Uji Penetrasi 1
 
