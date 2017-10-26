@@ -8,12 +8,20 @@
 Ubuntu Server adalah sistem operasi turunan dari Linux Ubuntu yang di desain khusus dengan kernel yang telah dikustomisasi untuk bekerja sebagai sistem operasi server. Pada Ubuntu Server tidak terdapat GUI dan hanya menggunakan CLI (Command Line Interface). Ubuntu Server menyediakan platform yang dapat memudahkan proses deploy server dengan fasilitas layanan internet standar, seperti mail, web, DNS, file-serving, hingga manajemen database. Ubuntu Server tidak membiarkan keberadaan port terbuka setelah proses instalasi, dan hanya akan memuat software yang dibutuhkan untuk membangun sebuah sistem server yang aman.
 
 ### Ubuntu Desktop
+Ubuntu merupakan salah satu distribusi Linux yang berbasiskan Debian dan didistribusikan sebagai software bebas. Ubuntu Desktop ditujukan untuk user yang memakai Ubuntu sebagai end user. Pada Ubuntu Desktop telahterinstall beberapa aplikasi, diantaranya: LibreOffice, Mozilla Firefox, dan Mozilla Thunderbird. Ubuntu Desktop mengompile paket menggunakan fitur gcc seperti PIE dan proteksi Buffer Overflow untuk memproteksi software.
 
 ### SSH Server
+Fungsi SSH Server: Menggantikan telnet, rlogin, ftp, dan rsh, salah satu fungsi utamanya adalah untuk menjamin keamanan dalam melakukan transmisi data pada suatu jaringan. Melakukan enkripsi terhadap data yang dikirim. Protokol untuk pertukaran data dalam suatu jaringan. Otentifikasi, mekanisme untuk memastikan pengirim dan penerima adalah benar dan aman. Kerahasiaan, memastikan kerahasiaan data yang dikirim agar hanya diketahui oleh penerima dan pengirim.
 
 ### THC Hydra
 
+### NCrack
+
 ### Medusa
+
+### Fail2Ban
+
+###
 
 ## Uji Penetrasi 1
 
