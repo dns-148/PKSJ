@@ -62,7 +62,13 @@ sudo apt-get install openssh-server
 
 ![ketik Y](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/%5Bssh%5D02.PNG)
 
-- 
+- Instalasi OpenSSH Server akan kembali berjalan hingga selesai. Untuk memastikan OpenSSH Server telah terinstal dengan baik, masukkan perintah berikut pada terminal:
+
+<pre>
+service ssh status
+</pre>
+
+![hasil dari perintah service ssh status](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/%5Bssh%5D04.PNG)
 
 ### 4. Langkah Uji Penetrasi dengah SSH Brute Force Tools
 
