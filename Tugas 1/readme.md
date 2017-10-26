@@ -9,6 +9,7 @@
 ### 1. Langkah Instalasi Ubuntu Server
 
 - Pilih bahasa untuk menu installasi.
+
 ![menu pilih bahasa](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/1.pilih_bahasa.PNG)
 
 ### 2. Langkah Instalasi Ubuntu Desktop
