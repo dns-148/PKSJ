@@ -4,6 +4,16 @@
 
 ## Dasar Teori
 
+### Ubuntu Server
+
+### Ubuntu Desktop
+
+### SSH Server
+
+### THC Hydra
+
+### Medusa
+
 ## Uji Penetrasi 1
 
 ### 1. Langkah Instalasi Ubuntu Server
