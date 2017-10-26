@@ -39,4 +39,12 @@ Ubuntu Server adalah sistem operasi turunan dari Linux Ubuntu yang di desain khu
 
 ### 3. Langkah Instalasi SSH Server
 
+- Masukkan perintah berikut pada terminal:
+
+<pre>
+sudo apt-get install openssh-server
+</pre>
+
+![perintah apt-get](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/%5Bssh%5D01.PNG)
+
 ### 4. Langkah Uji Penetrasi dengah SSH Brute Force Tools
