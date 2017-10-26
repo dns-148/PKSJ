@@ -57,4 +57,17 @@ sudo apt-get install openssh-server
 
 ![ketik Y](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/%5Bssh%5D02.PNG)
 
+- 
+
 ### 4. Langkah Uji Penetrasi dengah SSH Brute Force Tools
+
+## Uji Penetrasi 2
+
+### 1. Langkah Konfigurasi Fail2ban
+
+### 2. Langkah Konfigurasi SSH Server
+
+### 3. Langkah Uji Penetrasi dengah SSH Brute Force Tools
+
+## Kesimpulan dan Saran
+
