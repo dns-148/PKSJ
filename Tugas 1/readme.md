@@ -229,6 +229,15 @@ service ssh status
 
 ### 4. Langkah Uji Penetrasi dengah SSH Brute Force Tools
 
+- Username pada SSH server yang menjadi target: **afifahas**
+- Password dari user target: **AfifahAS01**
+- IP dari SSH server: **192.168.56.101**
+- File yang berisi daftar password: **pass.txt**
+  - Isi dari file yang **tidak mengandung** password dari user target
+    ![pass_salah](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/pass_salah.JPG)
+  - Isi dari file yang **mengandung** password dari user target
+    ![pass_benar](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/pass_benar.JPG)
+
 #### THC-Hydra
 1. Install THC-Hydra pada Ubuntu Desktop
 
@@ -236,21 +245,21 @@ service ssh status
 sudo apt-get install hydra
 </pre>
 
-2. Siapkan sebuah file .txt pada Ubuntu Desktop yang berisi daftar kemungkinan password dari user yang akan dicrack passwordnya.
+2. Siapkan sebuah file .txt pada Ubuntu Desktop yang berisi daftar kemungkinan password dari user target.
 
-3. Lakukan pengujian cracking dengan memasukkan perintah berikut
+3. Lakukan pengujian brute force attack dengan memasukkan perintah berikut
 
 <pre>
 hydra -l username -P daftar-password.txt ip-ssh-server ssh
 </pre>
 
-  - Pengujian pertama dilakukan dengan menggunakan file .txt yang tidak mengandung password yang benar dari user yang akan dicrack passwordnya.
+  - Pengujian pertama dilakukan dengan menggunakan file .txt yang tidak mengandung password yang benar dari user target.
 
     Hasil dari pengujian pertama:
     
     ![hydra_password_tidak_ditemukan](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/[uji1]hydra_fail.JPG)
   
-  - Pengujian kedua dilakukan dengan menggunakan file .txt yang mengandung password yang benar dari user yang akan dicrack passwordnya.
+  - Pengujian kedua dilakukan dengan menggunakan file .txt yang mengandung password yang benar dari user target.
     
     Hasil dari pengujian kedua:
     
@@ -267,21 +276,21 @@ make
 make install
 </pre>
 
-2. Siapkan sebuah file .txt pada Ubuntu Desktop yang berisi daftar kemungkinan password dari user yang akan dicrack passwordnya.
+2. Siapkan sebuah file .txt pada Ubuntu Desktop yang berisi daftar kemungkinan password dari user target.
 
-3. Lakukan pengujian cracking dengan memasukkan perintah berikut
+3. Lakukan pengujian brute force attack dengan memasukkan perintah berikut
 
 <pre>
 ncrack -p port-ssh-server --user username -P daftar-password.txt ip-ssh-server
 </pre>
 
- - Pengujian pertama dilakukan dengan menggunakan file .txt yang tidak mengandung password yang benar dari user yang akan dicrack passwordnya.
+ - Pengujian pertama dilakukan dengan menggunakan file .txt yang tidak mengandung password yang benar dari user target.
 
     Hasil dari pengujian pertama:
     
     ![ncrack_password_tidak_ditemukan](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/[uji1]ncrack_fail.JPG)
   
-  - Pengujian kedua dilakukan dengan menggunakan file .txt yang mengandung password yang benar dari user yang akan dicrack passwordnya.
+  - Pengujian kedua dilakukan dengan menggunakan file .txt yang mengandung password yang benar dari user target.
     
     Hasil dari pengujian kedua:
     
@@ -295,21 +304,21 @@ ncrack -p port-ssh-server --user username -P daftar-password.txt ip-ssh-server
 sudo apt-get install medusa
 </pre>
 
-2. Siapkan sebuah file .txt pada Ubuntu Desktop yang berisi daftar kemungkinan password dari user yang akan dicrack passwordnya.
+2. Siapkan sebuah file .txt pada Ubuntu Desktop yang berisi daftar kemungkinan password dari user target.
 
-3. Lakukan pengujian cracking dengan memasukkan perintah berikut
+3. Lakukan pengujian brute force attack dengan memasukkan perintah berikut
 
 <pre>
 medusa -u username -P daftar-password.txt ip-ssh-server -M ssh
 </pre>
 
- - Pengujian pertama dilakukan dengan menggunakan file .txt yang tidak mengandung password yang benar dari user yang akan dicrack passwordnya.
+ - Pengujian pertama dilakukan dengan menggunakan file .txt yang tidak mengandung password yang benar dari user target.
 
     Hasil dari pengujian pertama:
     
     ![medusa_password_tidak_ditemukan](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/[uji1]medusa_fail.JPG)
   
-  - Pengujian kedua dilakukan dengan menggunakan file .txt yang mengandung password yang benar dari user yang akan dicrack passwordnya.
+  - Pengujian kedua dilakukan dengan menggunakan file .txt yang mengandung password yang benar dari user target.
     
     Hasil dari pengujian kedua:
     
@@ -318,26 +327,37 @@ medusa -u username -P daftar-password.txt ip-ssh-server -M ssh
 
 ## Uji Penetrasi 2
 
-### 1. Langkah Konfigurasi Fail2ban
+### 1.	Setting SSH Server agar tidak menggunakan setting default
 
-- ignoreip = 192.168.56.101
-- bantime = 600
-- findtime = 100
-- maxretry = 3
+Upaya untuk mengamankan SSH Server dapat dilakukan dengan berbagai cara, 2 diantara adalah dengan mengganti port server dan menonaktifkan password authentication. Keduanya dilakukan dengan melakukan perubahan pada sshd_config yang terdapat pada direktori `/etc/ssh` dan harus diakses menggunakan root.
 
-### 2. Langkah Konfigurasi SSH Server
+- Merubah port server
+  - Buka file `sshd_config` dengan mengetikkan command sebagai berikut :
+    
+    <pre>
+    sudo nano /etc/ssh/sshd_config
+    </pre>
+    
+  - Lakukan perubahan pada bagian port. Secara default port dari ssh server adalah 22 dan kebanyakan brute force attacks akan menyerang langsung port 22 tersebut. Kita dapat mengganti port 22 dengan port lain yang belum terdaftar sebagai service, misalkan **2200**.
+  - Simpan perubahan dan lakukan restart terhadap server dengan mengetikkan command sebagai berikut :
+    
+    <pre>
+    sudo service ssh restart
+    </pre>
+  - Kemudian jalankan brute force attacks maka akan menghasilkan error sebagai berikut :
+    
+    **Hydra**
+    
+    ![ubah_port_hydra](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/[uji2]port_hydra.JPG)
+    
+    **Ncrack**
+    
+    ![ubah_port_ncrack](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/[uji2]port_ncrack.JPG)
+    
+    **Medusa**
+    
+    ![ubah_port_Medusa](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/[uji2]port_medusa.JPG)
 
-- Mengganti port menjadi 2200
-- PermitEmptyPasswords no
-- X11Forwarding no
-
-### 3. Langkah Uji Penetrasi dengah SSH Brute Force Tools
-
-#### THC-Hydra
-
-#### Ncrack
-
-#### Medusa
 
 ## Kesimpulan dan Saran
 
