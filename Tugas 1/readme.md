@@ -1,5 +1,12 @@
 # Tugas 1 - Uji Penetrasi
 
+#### Anggota Kelompok
+- Tionia Rizkika (5114100053)
+- Destiana Nurliasari (5114100148)
+- Afifah Asmar Sari (5114100154)
+
+- - - -
+
 ## Pendahuluan
 
 ## Dasar Teori
@@ -29,10 +36,17 @@ Medusa adalah sebuah agen brute-force login yang cepat, sangat paralel, modular 
 Saat ini Medusa memiliki modul untuk layanan berikut: CVS, FTP, HTTP, IMAP, MS-SQL, MySQL, NCP (NetWare), PcAnywhere, POP3, PostgreSQL, rexec, rlogin, rsh, SMB, SMTP (VRFY), SNMP, SSHv2 , SVN, Telnet, VmAuthd, VNC, dan modul pembungkus generik.
 
 ### Fail2Ban
-
 Fail2Ban adalah framework perangkat lunak pencegah intrusi untuk melindungi komputer server dari serangan brute-force. Perangkat lunak ini ditulis dengan menggunakan bahasa pemrograman python dan dapat berjalan pada POSIX sistem yang memiliki interface pada sistem kotrol-paket atau firewall yang terinstal secaral lokal, seperti iptables atau TCP Wrapper.
 
 Fail2Ban beroperasi dengan memonitor file log (misalnya pada /var/log/auth.log, /var/log/apache/access.log, dll.) untuk entri yang dipilih dan menjalankan skrip berdasarkan entri tersebut. Umumnya ini digunakan untuk memblokir alamat IP terpilih yang kemungkinan merupakan milik host yang mencoba menerobos keamanan sistem. Fail2Ban dapat melarang setiap alamat IP host yang melakukan percobaan login terlalu banyak atau melakukan tindakan lain yang tidak diinginkan dalam jangka waktu yang ditentukan oleh administrator.
+
+### DenyHosts
+DenyHosts adalah script python yang menganalisis sshd server log message untuk menentukan host mana yang mencoba untuk melakukan hacking pada suatu sistem dan menentukan user account mana yang menjadi targetnya. DenyHosts melacak frekuensi dari percobaan hacking yang dilakukan oleh tiap host. File /etc/hosts.deny akan diperbarui untuk mencegah percobaan peretasan dari suatu host di masa mendatang.
+
+### Sshguard
+Sshguard memproteksi host dari brute-force attack pada SSH dan servis-servis lain. Sshguard mengagregasi system logs dan memblokir penyerang yang melakukan serangan beberapa kali menggunakan satu atau lebih firewall backends, diantaranya iptables, ipfw, dan pf.
+Sshguard dapat membaca log message dari input standar (cocok untuk piping dari syslog) atau memonitor satu atau lebih log file. Log message akan diparsing tiap barisnya untuk mengenali pola. Jika suatu serangan, misalnya beberapa kegagalan login dalam jangka waktu yang singkat terdeteksi, maka IP dari penyerang akan diblokir.
+
 
 ## Uji Penetrasi 1
 
@@ -216,10 +230,91 @@ service ssh status
 ### 4. Langkah Uji Penetrasi dengah SSH Brute Force Tools
 
 #### THC-Hydra
+1. Install THC-Hydra pada Ubuntu Desktop
+
+<pre>
+sudo apt-get install hydra
+</pre>
+
+2. Siapkan sebuah file .txt pada Ubuntu Desktop yang berisi daftar kemungkinan password dari user yang akan dicrack passwordnya.
+
+3. Lakukan pengujian cracking dengan memasukkan perintah berikut
+
+<pre>
+hydra -l username -P daftar-password.txt ip-ssh-server ssh
+</pre>
+
+  - Pengujian pertama dilakukan dengan menggunakan file .txt yang tidak mengandung password yang benar dari user yang akan dicrack passwordnya.
+
+    Hasil dari pengujian pertama:
+    
+    ![hydra_password_tidak_ditemukan](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/[uji1]hydra_fail.JPG)
+  
+  - Pengujian kedua dilakukan dengan menggunakan file .txt yang mengandung password yang benar dari user yang akan dicrack passwordnya.
+    
+    Hasil dari pengujian kedua:
+    
+    ![hydra_password_ditemukan](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/[uji1]hydra_success.JPG)
 
 #### Ncrack
 
+1. Install Ncrack pada Ubuntu Desktop
+
+<pre>
+wget https://nmap.org/ncrack/dist/ncrack-0.5.tar.gz
+./configure
+make
+make install
+</pre>
+
+2. Siapkan sebuah file .txt pada Ubuntu Desktop yang berisi daftar kemungkinan password dari user yang akan dicrack passwordnya.
+
+3. Lakukan pengujian cracking dengan memasukkan perintah berikut
+
+<pre>
+ncrack -p port-ssh-server --user username -P daftar-password.txt ip-ssh-server
+</pre>
+
+ - Pengujian pertama dilakukan dengan menggunakan file .txt yang tidak mengandung password yang benar dari user yang akan dicrack passwordnya.
+
+    Hasil dari pengujian pertama:
+    
+    ![ncrack_password_tidak_ditemukan](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/[uji1]ncrack_fail.JPG)
+  
+  - Pengujian kedua dilakukan dengan menggunakan file .txt yang mengandung password yang benar dari user yang akan dicrack passwordnya.
+    
+    Hasil dari pengujian kedua:
+    
+    ![ncrack_password_ditemukan](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/[uji1]ncrack_success.JPG)
+
 #### Medusa
+
+1. Install Medusa pada Ubuntu Desktop
+
+<pre>
+sudo apt-get install medusa
+</pre>
+
+2. Siapkan sebuah file .txt pada Ubuntu Desktop yang berisi daftar kemungkinan password dari user yang akan dicrack passwordnya.
+
+3. Lakukan pengujian cracking dengan memasukkan perintah berikut
+
+<pre>
+medusa -u username -P daftar-password.txt ip-ssh-server -M ssh
+</pre>
+
+ - Pengujian pertama dilakukan dengan menggunakan file .txt yang tidak mengandung password yang benar dari user yang akan dicrack passwordnya.
+
+    Hasil dari pengujian pertama:
+    
+    ![medusa_password_tidak_ditemukan](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/[uji1]medusa_fail.JPG)
+  
+  - Pengujian kedua dilakukan dengan menggunakan file .txt yang mengandung password yang benar dari user yang akan dicrack passwordnya.
+    
+    Hasil dari pengujian kedua:
+    
+    ![medusa_password_ditemukan](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/[uji1]medusa_success.JPG)
+
 
 ## Uji Penetrasi 2
 
