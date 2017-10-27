@@ -9,6 +9,7 @@
 
 ## Pendahuluan
 
+
 ## Dasar Teori
 
 ### Ubuntu Server
@@ -329,9 +330,9 @@ medusa -u username -P daftar-password.txt ip-ssh-server -M ssh
 
 ### 1.	Setting SSH Server agar tidak menggunakan setting default
 
-Upaya untuk mengamankan SSH Server dapat dilakukan dengan berbagai cara, 2 diantara adalah dengan mengganti port server dan menonaktifkan password authentication. Keduanya dilakukan dengan melakukan perubahan pada sshd_config yang terdapat pada direktori `/etc/ssh` dan harus diakses menggunakan root.
+Upaya untuk mengamankan SSH Server dapat dilakukan dengan berbagai cara, 2 diantara adalah dengan mengganti port server dan menonaktifkan password authentication. Keduanya dilakukan dengan melakukan perubahan pada `sshd_config` yang terdapat pada direktori `/etc/ssh` dan harus diakses menggunakan root.
 
-- Merubah port server
+#### Mengubah port server
   - Buka file `sshd_config` dengan mengetikkan command sebagai berikut :
     
     <pre>
@@ -358,6 +359,108 @@ Upaya untuk mengamankan SSH Server dapat dilakukan dengan berbagai cara, 2 diant
     
     ![ubah_port_Medusa](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/[uji2]port_medusa.JPG)
 
+#### Menonaktifkan password authentication
+
+Untuk menggunakan settingan ini tidak bisa sembarangan, hal ini dapat dilakukan jika user bersangkutan sudah login dan ingin mengamankan ssh servernya. Karena apabila user melakukan log out tanpa merubah settingan terlebih dahulu, maka user bersangkutan juga tidak dapat melakukan login dengan password. Settingan ini dilakukan secara permanen apabila telah menggunakan public/private key sebagai pengganti password.
+  - Buka file `sshd_config` dengan mengetikkan command sebagai berikut :
+
+    <pre>
+    sudo nano /etc/ssh/sshd_config
+    </pre>
+    
+  - Hilangkan tanda **#** pada bagian **PasswordAuthentication** dan ubah statusnya menjadi **no**
+    
+  - Simpan perubahan dan lakukan restart terhadap server dengan mengetikkan command sebagai berikut :
+    <pre>
+    sudo service ssh restart
+    </pre>
+  - Kemudian jalankan brute force attacks maka akan menghasilkan error sebagai berikut :
+    **Hydra**
+    ![ubah_passauth_hydra](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/[uji2]pass_hydra.JPG)
+    
+    **Ncrack**
+    ![ubah_passauth_ncrack](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/[uji2]pass_ncrack.JPG)
+    
+    **Medusa**
+    ![ubah_passauth_medusa](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/[uji2]pass_medusa.JPG)
+    
+### 2.	Fail2Ban
+
+Settingan pada fail2ban dilakukan pada `jail.conf` akan tetapi banyak referensi yang menyarankan untuk merubah settingan pada `jail.local` dibandingkan `jail.conf`. Berikut langkah-langkahnya :
+
+- Terdapat 2 parameter yang perlu diperhatikan yakni :
+  - Bantime = **600** (jangka waktu ban)
+  - Findtime = **100** (jangka waktu ujicoba login)
+  - Maxtry = **3** (jumlah maksimal ujicoba login)
+  
+- Simpan konfigurasi dan lakukan restart fail2ban yakni dengan :
+  <pre>
+  sudo service fail2ban restart
+  </pre>
+
+- Kemudian jalankan brute force attacks maka akan menghasilkan error sebagai berikut :
+  **Hydra**
+  ![fail2ban_hydra](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/[uji2]fail2ban_hydra.JPG)
+    
+  **Ncrack**
+  ![fail2ban_ncrack](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/[uji2]fail2ban_ncrack.JPG)
+    
+  **Medusa**
+  ![fail2ban_medusa](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/[uji2]fail2ban_medusa.JPG)
+
+### 3.	SSHGuard
+Berikut langkah-langkah konfigurasi SSHGuard :
+- Melakukan iptables
+  <pre>
+  iptables -N SSHGuard
+  </pre>
+- Untuk melakukan block pada SSH, FTP, POP, IMAP gunakan multiport modul dengan mengetikkan command berikut :
+  <pre>
+  iptables -A INPUT -m multiport -p tcp –destination-ports 21,22,110,143 -j SSHGuard
+  </pre>
+- Untuk melakukan block pada hal yang dianggap mencurigakan oleh SSHGuard ketikkan command sebagai berikut :
+  <pre> 
+  iptables -A INPUT -j SSHGuard
+  </pre>
+- Kemudian jalankan brute force attacks maka akan menghasilkan error sebagai berikut :
+  **Hydra**
+  ![sshguard_hydra](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/[uji2]sshguard_hydra.JPG)
+    
+  **Ncrack**
+  ![sshguard_ncrack](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/[uji2]sshguard_ncrack.JPG)
+    
+  **Medusa**
+  ![sshguard_medusa](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/[uji2]sshguard_medusa.JPG)
+
+### 4.	DenyHosts
+Langkah-langkah melakukan konfigurasi pada denyhosts adalah sebagai berikut :
+- Buka file `denyhosts.conf` dengan mengetikkan command seperti berikut :
+- Pastikan :
+  <pre>
+  SECURE_LOG = /var/log/auth.log
+  HOSTS_DENY = /etc/hosts.deny
+  BLOCK_SERVICE = sshd
+  </pre>
+- Atur `DENY_THRESHOLD_INVALID` untuk melakukan limitasi terhadap kegagalan usaha login pada akun yang tidak terdaftar. By default nilainya adalah **1**.
+- Atur `DENY_THRESHOLD_VALID` untuk melakukan limitasi terhadap kegagalan usaha login pada akun yang terdaftar. By default nilainya adalah **3**.
+-	Atur `DENY_THRESHOLD_ROOT` untuk melakukan limitasi usaha login pada akun root. By default nilainya adalah **1**.
+- Simpan konfigurasinya dan jalankan brute force attacks maka akan dihasilkan error sebagai berikut :
+  **Hydra**
+  ![denyhosts_hydra](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/[uji2]denyhosts_hydra.JPG)
+    
+  **Ncrack**
+  ![denyhosts_ncrack](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/[uji2]denyhosts_ncrack.JPG)
+    
+  **Medusa**
+  ![denyhosts_medusa](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/[uji2]denyhosts_medusa.JPG)
+
 
 ## Kesimpulan dan Saran
+
+### Kesimpulan
+Walaupun memang brute force attacks merupakan serangan sederhana yang dapat ditanggulangi dengan tools yang banyak tersedia akan tetapi perlu selalu diwaspadai keberadaannya.
+
+### Saran
+- Selalu pastikan security untuk server terkonfigurasi dengan baik dan benar. Seperti dengan mengubah pengaturan SSH server dan dengan menambahkan tools untuk mengamankan server.
+- Apapun tools security yang digunakan perlu dipastikan pula kegunaan dan peruntukannya agar dapat berjalan maksimal.
 
