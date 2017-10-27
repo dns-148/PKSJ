@@ -64,6 +64,78 @@ Ncrack dilepaskan sebagai alat standalone dan bisa diunduh dari bagian di bawah 
 
 ![input hostname](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/9.konfigurasi_network.PNG)
 
+- Input nama lengkap dari akun user yang akan dibuat untuk kegiatan non-adminitratif.
+
+![input fullname](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/10.set-up_fullname.PNG)
+
+- Input username untuk akun user baru. Username harus mulai dari huruf kecil dan dapat diikuti oleh kombinasi angka dan huruf kecil lainnya.
+
+![input username](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/11.set-up_username.PNG)
+
+- Input sandi/password untuk akun baru.
+
+![input password](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/12.set-up_password.PNG)
+
+- Input ulang sandi/password untuk akun baru yang telah dimasukkan dilangkah sebelumnya.
+
+![input ulang password](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/13.re-type_password.PNG)
+
+- Mengenkripsi direktori home, sehingga file yang tersimpan bersifat pribadi. Pilih 'Yes' untuk mengekripsi home, pilih 'No' untuk melanjutkan instalasi tanpa mengenkripsi direktori home.
+
+![pilihan enkripsi home direktori](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/14.enkrip_direktori_home.PNG)
+
+- Timezone telah dipilih secara otomatis dari lokasi fisik komputer yang sedang melakukan instalasi. Bila hasil pemilihan benar, pilih 'Yes' untuk melanjutkan instalasi. Bila hasil kurang sesuai, pilih 'No' untuk memilih timezone secara manual dari list.
+
+![pengaturan timezone](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/15.setting_up_clock.PNG)
+
+- Bila memilih 'No' pada pilihan sebelumnya, sekarang anda akan memilih manual timezone dari list yang disediakan.
+
+![pilih timezone](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/16.setting_up_clock.PNG)
+
+- Pilih metode partisi disk yang ingin digunakan, pilih 'Guided - user entire disk and set up LVM' bila ingin diarahkan pada saat mempartisi disk dan pengaturan Logical Volume Manager oleh sistem instalasi.
+
+![pilih metode partisi disk](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/17.partition_disk.PNG)
+
+- Pilih disk yang akan dipartisi, dimana disk yang dipilih akan dihapus datanya pada saat partisi.
+
+![pilih disk](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/18.partition_disk.PNG)
+
+- Pilih 'Yes' bila telah yakin akan disk yang akan dipartisi dan melanjutkan ke konfigurasi LVM. Pilih 'No' untuk kembali ke tahap sebelumnya untuk memilih disk.
+
+![konfirmasi pilih disk](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/19.partition_disk.PNG)
+
+- Inputkan besar ukuran dari volume group yang dikehendaki untuk partisi disk.
+
+![input ukuran disk](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/20.partition_disk.PNG)
+
+- Konfirmasi dari pilihan dari tahap sebelumnya dan informasi yang akan terjadi pada disk anda saat di write. Pilih 'Yes' untuk sistem melakukan partisi dan melanjutkan ke langkah selanjutnya. Pilih 'No' untuk kembali ke langkah sebelumnya.
+
+![konfirmasi sebelum disk di write](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/21.partition_disk.PNG)
+
+- Bila diperlukan proxy untuk mengakses internet, maka inputkan informasi HTTP proxy dan bila tidak maka dapat dikosongkan. Kemudian pilih 'Continue'.
+
+![konfigurasi proxy](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/22.setting_proxy.PNG)
+
+- Pilih prefensi untuk menangani update yang akan terjadi kedepannya. Pilih 'No automatic updates' bila menginginkan sistem tidak melakukan update secara otomatis dan update dilakukan secara manual melalui package manager. Pilih 'Install security update automatically' bila menginginkan sistem mengupdate secara otomatis. Pilih 'Manage system with Landscape' bila mengingkan konfigurasi dan update sistem dilakukan dengan Landscape.
+
+![pilih prefensi update sistem](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/23.pilih_setting_update.PNG)
+
+- Pilih satu atau lebih software tambahan dari list untuk diinstal pada sistem.
+
+![pilih software](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/24.pilih_software.PNG)
+
+- Pilih satu atau lebih software tambahan dari list untuk diinstal pada sistem.
+
+![pilih software](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/24.pilih_software.PNG)
+
+- Bila Ubuntu Server yang akan diinstal merupakan satu-satunya OS yang terinstal pada komputer, maka anda akan mendapat pilihan untuk menginstal GRUB boot loader pada master boot record. Pilih 'Yes' untuk menginstal GRUB boot loader pada master boot record dan melanjutkan instalasi.
+
+![GRUB boot loader pada master boot record](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/27.instalasi_grub_loader.PNG)
+
+- Instalasi OS Ubuntu Server telah selesai dan dapat dioperasikan.
+
+![instalasi selesai](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/28.instalasi_selesai.PNG)
+
 ### 2. Langkah Instalasi Ubuntu Desktop
 
 ### 3. Langkah Instalasi SSH Server
@@ -83,6 +155,8 @@ sudo apt-get install openssh-server
 <pre>
 service ssh status
 </pre>
+
+- Bila ssh telah terinstal dengan baik maka perintah diatas akan menghasilkan 'ssh start/running'.
 
 ![hasil dari perintah service ssh status](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/%5Bssh%5D04.PNG)
 
