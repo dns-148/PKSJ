@@ -138,6 +138,43 @@ Ncrack dilepaskan sebagai alat standalone dan bisa diunduh dari bagian di bawah 
 
 ### 2. Langkah Instalasi Ubuntu Desktop
 
+- Pilih 'Install Ubuntu' untuk memulai instalasi OS Ubuntu Desktop.
+
+![mulai instalasi](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/%5Bdesktop%5D01.png)
+
+- Pastikan komputer yang akan diinstal OS Ubuntu memiliki ukuran drive lebih dari 6.7 GB, tersambung pada sumber daya, dan terkoneksi dengan internet untuk proses instalasi yang lancar. Centang 'Download update while installing' bila menginginkan update dari sistem terdownload pada saat instalasi OS.
+
+![persyaratan instalasi](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/%5Bdesktop%5D02.png)
+
+- Bila tidak memiliki OS lainnya yang terinstal, maka pilih 'Erase disk and install Ubuntu' dan centang 'Use LVM with the new Ubuntu installantion' bila menginginkan Logical Volume Manager. Pilih 'Continue'.
+
+![partisi disk](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/%5Bdesktop%5D03.png)
+
+- Pop-up konfirmasi tentang informasi perubahan yang akan terjadi pada disk. Pilih 'Continue' jika telah setuju akan rencana perubahan yang akan terjadi. Pilih 'Go Back' untuk kembali ke langkah sebelumnya.
+
+![konfirmasi partisi disk](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/%5Bdesktop%5D03_2.png)
+
+- Input lokasi anda dan pilih 'Continue'.
+
+![pilih lokasi](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/%5Bdesktop%5D04_2.png)
+
+- Pilih keyboard layout secara manual yang tersedia di list atau secara otomatis dengan melakukan test keyboard pada 'Detect Keyboard Layout'. Kemudian pilih 'Continue'.
+
+![pilih keyboard layout](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/%5Bdesktop%5D05.png)
+
+- Input data informasi tentang pengguna seperti: nama lengkap, nama komputer, username dan password. Kemudian pilih 'Continue'.
+
+![input informasi user](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/%5Bdesktop%5D06_1.png)
+
+- Proses instalasi OS Ubuntu Desktop akan berjalan, tunggu hingga proses tersebut selesai dengan tidak mematikan komputer secara paksa.
+
+![proses instalasi](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/%5Bdesktop%5D07.png)
+
+- OS Ubuntu Desktop berhasil diinstal, restart komputer untuk menggunakan OS yang telah terinstal.
+
+![instalasi selesai](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/%5Bdesktop%5D08.png)
+
+
 ### 3. Langkah Instalasi SSH Server
 
 - Masukkan perintah berikut pada terminal:
