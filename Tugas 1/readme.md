@@ -225,7 +225,16 @@ service ssh status
 
 ### 1. Langkah Konfigurasi Fail2ban
 
+- ignoreip = 192.168.56.101
+- bantime = 600
+- findtime = 100
+- maxretry = 3
+
 ### 2. Langkah Konfigurasi SSH Server
+
+- Mengganti port menjadi 2200
+- PermitEmptyPasswords no
+- X11Forwarding no
 
 ### 3. Langkah Uji Penetrasi dengah SSH Brute Force Tools
 
