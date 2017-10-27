@@ -24,9 +24,15 @@ Ncrack adalah tool untuk cracking otentikasi jaringan berkecepatan tinggi. Ncrac
 Fitur Ncrack mencakup antarmuka yang sangat fleksibel yang memberi pengguna kontrol penuh atas operasi jaringan, memungkinkan serangan bruteforcing yang sangat canggih, template waktu untuk kemudahan penggunaan, interaksi runtime yang mirip dengan Nmap dan banyak lagi. Protokol yang didukung meliputi RDP, SSH, HTTP (S), SMB, POP3 (S), VNC, FTP, SIP, Redis, PostgreSQL, MySQL, dan Telnet.
 
 ### Medusa
-Medusa adalah sebuah agen brute-force login yang cepat, sangat paralel, modular bagi layanan jaringan. Medusa diciptakan oleh para ahli di Foofus.net. Tujuan dibuatnya Medusa adalah untuk mendukung sebanyak mungkin layanan yang memungkinkan otentikasi jarak jauh. Beberapa fitur yang mejadi fitur penting dari Medusa adalah sebagai berikut: thread-based parallel testing, input pengguna yang flexibel, dan desain yang modular. Saat ini Medusa memiliki modul untuk layanan berikut: CVS, FTP, HTTP, IMAP, MS-SQL, MySQL, NCP (NetWare), PcAnywhere, POP3, PostgreSQL, rexec, rlogin, rsh, SMB, SMTP (VRFY), SNMP, SSHv2 , SVN, Telnet, VmAuthd, VNC, dan modul pembungkus generik.
+Medusa adalah sebuah agen brute-force login yang cepat, sangat paralel, modular bagi layanan jaringan. Medusa diciptakan oleh para ahli di Foofus.net. Tujuan dibuatnya Medusa adalah untuk mendukung sebanyak mungkin layanan yang memungkinkan otentikasi jarak jauh. Beberapa fitur yang mejadi fitur penting dari Medusa adalah sebagai berikut: thread-based parallel testing, input pengguna yang flexibel, dan desain yang modular. 
+
+Saat ini Medusa memiliki modul untuk layanan berikut: CVS, FTP, HTTP, IMAP, MS-SQL, MySQL, NCP (NetWare), PcAnywhere, POP3, PostgreSQL, rexec, rlogin, rsh, SMB, SMTP (VRFY), SNMP, SSHv2 , SVN, Telnet, VmAuthd, VNC, dan modul pembungkus generik.
 
 ### Fail2Ban
+
+Fail2Ban adalah framework perangkat lunak pencegah intrusi untuk melindungi komputer server dari serangan brute-force. Perangkat lunak ini ditulis dengan menggunakan bahasa pemrograman python dan dapat berjalan pada POSIX sistem yang memiliki interface pada sistem kotrol-paket atau firewall yang terinstal secaral lokal, seperti iptables atau TCP Wrapper.
+
+Fail2Ban beroperasi dengan memonitor file log (misalnya pada /var/log/auth.log, /var/log/apache/access.log, dll.) untuk entri yang dipilih dan menjalankan skrip berdasarkan entri tersebut. Umumnya ini digunakan untuk memblokir alamat IP terpilih yang kemungkinan merupakan milik host yang mencoba menerobos keamanan sistem. Fail2Ban dapat melarang setiap alamat IP host yang melakukan percobaan login terlalu banyak atau melakukan tindakan lain yang tidak diinginkan dalam jangka waktu yang ditentukan oleh administrator.
 
 ## Uji Penetrasi 1
 
