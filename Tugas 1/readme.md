@@ -8,7 +8,7 @@
 - - - -
 
 ## Pendahuluan
-
+Keamanan jaringan adalah suatu cara atau suatu sistem yang digunakan untuk memberikan proteksi atau perlindungan pada suatu jaringan agar terhindar dari berbagai ancaman luar yang mampu merusak jaringan. Salah satu contoh dari ancaman terhadap keamanan suatu jaringan adalah dengan adanya penetrasi pada SSH server. Password cracking merupakan salah satu teknik dalam melakukan penetrasi. Pada uji penetrasi kali ini, akan dilakukan pengujian password cracking menggunakan tools SSH brute force attack. Selain itu, akan dilakukan juga pengujian password cracking yang akan dicountermeasure menggunakan beberapa tools yang digunakan untuk menangkal serangan brute force.
 
 ## Dasar Teori
 
