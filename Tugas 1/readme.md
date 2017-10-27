@@ -46,6 +46,8 @@ Fail2Ban beroperasi dengan memonitor file log (misalnya pada /var/log/auth.log, 
 
 ![pilih install](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/2.pilih_install_ubuntu_server.PNG)
 
+#### Konfigurasi bahasa, lokasi dan sistem lokal
+
 - Pilih bahasa untuk OS Ubuntu Server.
 
 ![pilih bahasa OS](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/3.pilih_bahasa_ubuntu_server.PNG)
@@ -58,6 +60,8 @@ Fail2Ban beroperasi dengan memonitor file log (misalnya pada /var/log/auth.log, 
 
 ![pilih locale](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/5.pilih_konfigurasi_lokal.PNG)
 
+#### Konfigurasi keyboard layout
+
 - Konfigurasi layout dari keyboard, pilih 'Yes' bila ingin melakukan test untuk mendapatkan layout keyboard, pilih 'No' untuk memilih layout yang disediakan.
 
 ![pilih layout keyboard](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/6.konfigurasi_keyboard.PNG)
@@ -65,6 +69,8 @@ Fail2Ban beroperasi dengan memonitor file log (misalnya pada /var/log/auth.log, 
 - Bila memilih 'Yes', maka akan muncul serangkaian test untuk mencocokan character yang ditampilkan dengan yang berada pada keyboard. Kemudian dari hasil test tersebut didapatkan layout keyboard.
 
 ![hasil test keyboard](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/7.konfigurasi_keyboard2.PNG)
+
+#### Konfigurasi data pengguna
 
 - Input nama yang dikendahaki untuk hostname, hostname berfungsi sebagai pengenal sistem pada jaringan.
 
@@ -90,6 +96,8 @@ Fail2Ban beroperasi dengan memonitor file log (misalnya pada /var/log/auth.log, 
 
 ![pilihan enkripsi home direktori](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/14.enkrip_direktori_home.PNG)
 
+#### Konfigurasi timezone
+
 - Timezone telah dipilih secara otomatis dari lokasi fisik komputer yang sedang melakukan instalasi. Bila hasil pemilihan benar, pilih 'Yes' untuk melanjutkan instalasi. Bila hasil kurang sesuai, pilih 'No' untuk memilih timezone secara manual dari list.
 
 ![pengaturan timezone](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/15.setting_up_clock.PNG)
@@ -97,6 +105,8 @@ Fail2Ban beroperasi dengan memonitor file log (misalnya pada /var/log/auth.log, 
 - Bila memilih 'No' pada pilihan sebelumnya, sekarang anda akan memilih manual timezone dari list yang disediakan.
 
 ![pilih timezone](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/16.setting_up_clock.PNG)
+
+#### Partisi disk
 
 - Pilih metode partisi disk yang ingin digunakan, pilih 'Guided - user entire disk and set up LVM' bila ingin diarahkan pada saat mempartisi disk dan pengaturan Logical Volume Manager oleh sistem instalasi.
 
@@ -118,6 +128,8 @@ Fail2Ban beroperasi dengan memonitor file log (misalnya pada /var/log/auth.log, 
 
 ![konfirmasi sebelum disk di write](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/21.partition_disk.PNG)
 
+#### Konfigurasi package manager
+
 - Bila diperlukan proxy untuk mengakses internet, maka inputkan informasi HTTP proxy dan bila tidak maka dapat dikosongkan. Kemudian pilih 'Continue'.
 
 ![konfigurasi proxy](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/22.setting_proxy.PNG)
@@ -130,9 +142,7 @@ Fail2Ban beroperasi dengan memonitor file log (misalnya pada /var/log/auth.log, 
 
 ![pilih software](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/24.pilih_software.PNG)
 
-- Pilih satu atau lebih software tambahan dari list untuk diinstal pada sistem.
-
-![pilih software](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%201/Screenshot/24.pilih_software.PNG)
+#### GRUB boot loader
 
 - Bila Ubuntu Server yang akan diinstal merupakan satu-satunya OS yang terinstal pada komputer, maka anda akan mendapat pilihan untuk menginstal GRUB boot loader pada master boot record. Pilih 'Yes' untuk menginstal GRUB boot loader pada master boot record dan melanjutkan instalasi.
 
@@ -205,6 +215,12 @@ service ssh status
 
 ### 4. Langkah Uji Penetrasi dengah SSH Brute Force Tools
 
+#### THC-Hydra
+
+#### Ncrack
+
+#### Medusa
+
 ## Uji Penetrasi 2
 
 ### 1. Langkah Konfigurasi Fail2ban
@@ -212,6 +228,12 @@ service ssh status
 ### 2. Langkah Konfigurasi SSH Server
 
 ### 3. Langkah Uji Penetrasi dengah SSH Brute Force Tools
+
+#### THC-Hydra
+
+#### Ncrack
+
+#### Medusa
 
 ## Kesimpulan dan Saran
 
