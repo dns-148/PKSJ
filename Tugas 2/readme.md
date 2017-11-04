@@ -41,7 +41,7 @@ Merupakan plugin yang digunakan untuk mengatur dan menampilkan hasil dari pertan
 
 ### Langkah Instalasi Wordpress
 - Download Wordpress dari alamat: <pre>https://wordpress.org/download/</pre>
-- Extract hasil file hasil dari download pada directori home, bila menggunakan XAMPP directori default adalah pada: <pre>C:\xampp\htdocs\ </pre>
+- Extract hasil file hasil dari download pada directori home, bila menggunakan OS Windows dan XAMPP maka directori default ada pada: <pre>C:\xampp\htdocs\ </pre>
 - (Opsional) Rename folder hasil extract bila diperlukan.
 - Buka file 'wp-config-sample.php' menggunakan text-editor, ubah pengaturan database sesuai dengan kehendak:
 ![atur database](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/wp-configPNG.PNG)
@@ -51,14 +51,21 @@ define('WP_SITEURL', 'http://alamatip/nama_folder');
 </pre>
 
 - Simpan dan ubah nama menjadi 'wp-config.php'.
-- Pada browser buka url yang telah di inputkan sebelumnya pada 'wp-config.php', seperti:
-<pre>
+- Pada browser buka url yang telah di inputkan sebelumnya pada 'wp-config.php', seperti: <pre>
 http://192.168.100.19/wordpress/ -> (http://alamatip/nama_folder)
 </pre>
 
 - Pilih bahasa instalasi:
+
 ![pilih bahasa](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/step1.PNG)
 
+- Input data user dan web:
+
+![data user](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/step2.PNG)
+
+- Instalasi wordpress telah selesai, untuk menggunakan mengatur wordpress login dengan mengklik button 'Login' atau pada alamat:<pre>http://alamatip/nama_folder/wp-login/ </pre>
+
+![instalasi](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/step3.PNG)
 
 ### Langkah Instalasi Wordpress Plugin
 
