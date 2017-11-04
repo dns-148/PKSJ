@@ -18,7 +18,23 @@ Ubuntu merupakan salah satu distribusi Linux yang berbasiskan Debian dan didistr
 
 ### Wordpress Plugin yang Digunakan
 
+#### 1. VideoPlayer 1.5.16
+
+
+#### 2. LeagueManager 3.9.1.1
+Merupakan plugin yang digunakan untuk mengatur dan menampilkan hasil dari pertandingan olahraga pada wordpress blog. Plugin dapat diunduh dari https://wordpress.org/plugins/leaguemanager/
+
+
+#### 3. Simply Poll 1.4.1
+
 ### Tools yang Digunakan
+
+#### 1. WPScan
+
+#### 2. sqlmap
+
+
+
 
 
 ## Instalasi
