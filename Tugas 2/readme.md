@@ -142,8 +142,9 @@ python sqlmap.py --url "http://alamat_site?action=data_management&cpmvc_do_actio
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hasil:
 
 ![cpmulti 1](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/cpmulti1.png)
-![simplypol 6](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/simplypoll6.png)
-![simplypol 7](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/simplypoll7.png)
+![cpmulti 2](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/cpmulti2.png)
+![cpmulti 3](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/simplypoll6.png)
+![cpmulti 4](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/simplypoll7.png)
 
 #### Plugin - League Manager 3.9.11
 - Buka terminal pada folder dimana sqlmap berada, jalankan perintah:<pre>
