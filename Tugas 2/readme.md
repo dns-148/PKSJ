@@ -19,23 +19,21 @@ Ubuntu merupakan salah satu distribusi Linux yang berbasiskan Debian dan didistr
 ### Wordpress Plugin yang Digunakan
 
 #### 1. VideoPlayer 1.5.16
-
+Merupakan Plugin yang digunakan untuk menambahkan video pada Wordpress website. Pada plugin ini terdapat fitur untuk membuat playlist video, mengatur layout dan tampilan dari player dan terintegrasi dengan beberapa media sosial (Facebook, Google+ dan Twitter). Plugin ini dapat diunduh pada https://wordpress.org/plugins/player/
 
 #### 2. LeagueManager 3.9.1.1
-Merupakan plugin yang digunakan untuk mengatur dan menampilkan hasil dari pertandingan olahraga pada wordpress blog. Plugin dapat diunduh dari https://wordpress.org/plugins/leaguemanager/
+Merupakan plugin yang digunakan untuk mengatur dan menampilkan hasil dari pertandingan olahraga pada Wordpress website. Plugin ini dapat diunduh pada https://wordpress.org/plugins/leaguemanager/
 
-
-#### 3. Simply Poll 1.4.1
+#### 3. Simply Polls 1.4.1
+Merupakan plugin yang digunakan untuk membuat poll pada Wordpress website. Poll yang dibuat dapat ditampilkan pada sidebar, post, maupun pages dari website. Plugin ini dapat diunduh pada https://wordpress.org/plugins/simply-polls/
 
 ### Tools yang Digunakan
 
 #### 1. WPScan
+Merupakan tools untuk melihat celah keamanan dari seluruh plugin dan theme yang digunakan pada Wordpress website. Tools ini dibuat menggunakan bahasa ruby.
 
 #### 2. sqlmap
-
-
-
-
+Merupakan tools opensource yang mendeteksi dan melakukan exploit pada bug SQL injection secara otomatis. dengan melakukan serangan SQL injection seorang attacker dapat mengambil alih serta memanipulasi sebuah database di dalam sebuah server.
 
 ## Instalasi
 
