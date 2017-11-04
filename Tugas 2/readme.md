@@ -8,6 +8,7 @@
 - - - -
 
 ## Pendahuluan
+SQL Injection adalah salah satu teknik peretasan dengan menyalahgunakan sebuah celah keamanan yang terjadi dalam lapisan basis data dari suatu aplikasi. Pelaku penyerangan dapat menginsertkan perintah-perintah SQL melalui URL untuk dieksekusi oleh database. Dengan SQL Injection, penyerang dapat memperoleh list database dan tabel-tabel yang ada pada database target. Bahkan, penyerang juga dapat  melakukan login tanpa harus memiliki akun.
 
 ## Dasar Teori
 
