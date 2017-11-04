@@ -8,7 +8,9 @@
 - - - -
 
 ## Pendahuluan
-SQL Injection adalah salah satu teknik peretasan dengan menyalahgunakan sebuah celah keamanan yang terjadi dalam lapisan basis data dari suatu aplikasi. Pelaku penyerangan dapat menginsertkan perintah-perintah SQL melalui URL untuk dieksekusi oleh database. Dengan SQL Injection, penyerang dapat memperoleh list database dan tabel-tabel yang ada pada database target. Bahkan, penyerang juga dapat  melakukan login tanpa harus memiliki akun.
+SQL Injection adalah salah satu teknik peretasan dengan menyalahgunakan sebuah celah keamanan yang terjadi dalam lapisan basis data dari suatu aplikasi. Pelaku penyerangan dapat menginsertkan perintah-perintah SQL melalui URL untuk dieksekusi oleh database. Dengan SQL Injection, penyerang dapat memperoleh list database dan tabel-tabel yang ada pada database target. Bahkan, penyerang juga dapat  melakukan login tanpa harus memiliki akun. Tentunya hal ini sangat merugikan karena data data yang tersimpan pada database merupakan sebuah kerahasiaan dan kepentingan pihak pihak tertentu jangan sampai nantinya disalahgunakan oleh pihak yg tidak bertanggungjawab. 
+
+SQL Injection ini sangat sering terjadi pada aplikasi web terutama saat dilakukan akses pada database. Salah satu web engine atau blog engine yang terkenal adalah Wordpress. Sekalipun ia populer tapi bukan berarti ia sempurna, ada beberapa celah yang menyebabkannya rentan akan serangan hacking sql injection. Kali ini kita akan melakukan sebuah simulasi SQL Injection pada Wordpress melalui plugin-plugin yang rentan terhadap serangan ini. Dengan mengetahui proses dari SQL Injection ini, nantinya kita dapat melakukan pencegahan dengan pengamanan lebih terhadap web yang kita miliki.
 
 ## Dasar Teori
 
@@ -151,7 +153,14 @@ python sqlmap.py --url "http://alamat_site?league_id=1&season=Winter" --level 5 
 ## Kesimpulan dan Saran
 
 ### Kesimpulan
+Kami melakukan uji coba dengan beberapa tools SQL injection. Yakni :
+  1. **Wpscan**, yg berguna untuk melakukan scanning plugin yang diindikasikan rentan terhadap serangan
+  2. **Sqlmap**, yang mampu melakukan SQL injection pada plugin target yang telah diketahui tingkat rentannya
+
+Dari hasil uji coba yang dilakukan, kami memastikan bahwa plugin-plugin dibawah ini benar-benar rentan dan mudah diserang oleh SQL injection :
+  1. **League Manager**
+  2. **Spider Video Player**
+  3. **Simply Poll**
 
 ### Saran
-
-
+Dapat diketahui bahwa terbukti beberapa plugin pada wordpress tidak sepenuhnya aman terhadap serangan. Ada baiknya kita menghindari penggunaan plugin tersebut dengan plugin lain yang lebih aman. Jika diperlukan, anda juga dapat memberikan akses keamanan tambahan terhadap web milik anda.
