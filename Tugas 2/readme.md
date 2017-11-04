@@ -73,7 +73,7 @@ http://192.168.100.19/wordpress/ -> (http://alamatip/nama_folder)
 ![tab plugin](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/plugin1.PNG)
 
 - Pilih 'Add New'.
-- Pilih plugin yang dikehendaki untuk diinstal bila telah memiliki file plugin, maka pilih 'Upload File'.
+- Pilih plugin yang dikehendaki untuk diinstal atau bila telah memiliki file plugin, maka pilih 'Upload File'.
 
 ![upload file](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/plugin2.PNG)
 
