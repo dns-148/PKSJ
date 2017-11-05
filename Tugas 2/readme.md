@@ -41,6 +41,8 @@ Merupakan tools untuk melihat celah keamanan dari seluruh plugin dan theme yang 
 #### 2. sqlmap
 Merupakan tools opensource yang mendeteksi dan melakukan exploit pada bug SQL injection secara otomatis. dengan melakukan serangan SQL injection seorang attacker dapat mengambil alih serta memanipulasi sebuah database di dalam sebuah server.
 
+#### 3. Havij
+
 ## Instalasi
 
 ### Langkah Instalasi Wordpress
@@ -184,6 +186,30 @@ python sqlmap.py --url "http://alamat_site?/wp-admin/admin-ajax.php?action=spide
 
 ![videoplayer 1](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/leaguemanager_tables10.png)
 ![videoplayer 2](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/videoplayer2.png)
+
+## Havij
+
+#### Plugin - League Manager 3.9.11
+
+- Masukkan alamat `http://alamat_site?match=1` pada kolom **Target** kemudian jalankan **Analyze**. Hasil:
+
+![havij leaguemanager 1](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/havij1.PNG)
+
+- Buka tab **Info** kemudian klik **Get** untuk mendapatkan informasi tengtang database. Hasil:
+
+![havij leaguemanager 2](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/havij2.PNG)
+
+- Buka tab **Tables** pilih database **wordpress** jalankan **Get Tables**. Hasil:
+
+![havij leaguemanager 3](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/havij3.PNG)
+
+- Pilih tabel **wp_users** jalankan **Get Columns**. Hasil:
+
+![havij leaguemanager 3](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/havij4.PNG)
+
+- Selesksi semua kolumn yang ada pada tabel **wp_users** jalankan **Get Data**. Hasil:
+
+![havij leaguemanager 3](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/havij5.PNG)
 
 ## Kesimpulan dan Saran
 
