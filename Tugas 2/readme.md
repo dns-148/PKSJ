@@ -39,9 +39,10 @@ CP Multi View Event Calendar merupakan event kalender untuk website wordpress ya
 Merupakan tools untuk melihat celah keamanan dari seluruh plugin dan theme yang digunakan pada Wordpress website. Tools ini dibuat menggunakan bahasa ruby.
 
 #### 2. sqlmap
-Merupakan tools opensource yang mendeteksi dan melakukan exploit pada bug SQL injection secara otomatis. dengan melakukan serangan SQL injection seorang attacker dapat mengambil alih serta memanipulasi sebuah database di dalam sebuah server.
+Merupakan tool opensource yang mendeteksi dan melakukan exploit pada bug SQL injection secara otomatis. dengan melakukan serangan SQL injection seorang attacker dapat mengambil alih serta memanipulasi sebuah database di dalam sebuah server.
 
 #### 3. Havij
+Havij adalah tool SQL Injection otomatis yang membantu penguji keamanan untuk menemukan dan memanfaatkan kerentanan terhadap SQL Injection di halaman web. Havij mulai dibuat pada tahun 2010 oleh ITSecTeam. Tool ini dirancang dengan GUI yang ramah pengguna sehingga memudahkan pengguna untuk mengambil data yang diinginkan.
 
 ## Instalasi
 
