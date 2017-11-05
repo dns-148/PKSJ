@@ -191,7 +191,7 @@ python sqlmap.py --url "http://192.168.100.19/wordpress/wp-admin/admin-ajax.php?
 
 #### Plugin - League Manager 3.9.11
 
-- Input alamat web yang dituju `http://1http://192.168.100.19/wordpress/2017/11/04/hello-world/?match=1` pada kolom **Target** kemudian jalankan **Analyze**. Hasil:
+- Input alamat web yang dituju `http://192.168.100.19/wordpress/2017/11/04/hello-world/?match=1` pada kolom **Target** kemudian jalankan **Analyze**. Hasil:
 
 ![havij leaguemanager 1](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/havij1.PNG)
 
@@ -205,11 +205,15 @@ python sqlmap.py --url "http://192.168.100.19/wordpress/wp-admin/admin-ajax.php?
 
 - Pilih tabel **wp_users** jalankan **Get Columns**. Hasil:
 
-![havij leaguemanager 3](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/havij4.PNG)
+![havij leaguemanager 4](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/havij4.PNG)
 
-- Selesksi semua kolumn yang ada pada tabel **wp_users** jalankan **Get Data**. Hasil:
+- Pilih kolom **user_login & user_pass** pada tabel **wp_users** jalankan **Get Data**. Hasil:
 
-![havij leaguemanager 3](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/havij5.PNG)
+![havij leaguemanager 5](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/havij5.PNG)
+
+- Pilih tab **Find Admin** input pada pathh `http://192.168.100.19/wordpress/` jalankan **Start**. Hasil:
+
+![havij leaguemanager 6](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/havij5_5.PNG)
 
 #### Plugin - CP Multi View Event Calendar 1.1.7
 
