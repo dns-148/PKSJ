@@ -92,7 +92,41 @@
 
 25. Klik Login dan user akan login sebagai <b>samurai</b>
 
-Refrensi: http://www.computersecuritystudent.com/SECURITY_TOOLS/MUTILLIDAE/MUTILLIDAE_2511/lesson5/index.html
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m5_15.png)
+
+26. Buka terminal pada ubuntu dan masuk sebagai user root dengan perintah `su - root`
+
+27. Login ke mysql dan masukkan perintah berikut
+```
+mysql -u root -p
+show databases;
+use nowasp;
+```
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m5_16.png)
+
+28. Lihat daftar tabel yang ada dan pilih tabel <b>`accounts`</b> dengan perintah berikut
+```
+show tables;
+desc accounts;
+```
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m5_17.png)
+
+29. Tampilkan isi dari tabel <b>`accounts`</b>
+```
+select * from accounts;
+```
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m5_18.png)
+
+```
+select * from accounts where username = '' and password = '';
+select * from accounts where username = 'samurai' and password = 'abcdfgh';
+select * from accounts where username = 'samurai'; -- and password = 'abcdfgh';
+```
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m5_19.png)
+
 
 ## Lesson 8 - SQL Injection Union Exploit #1
 1. Mencoba melakukan union dengan menggunakan database mutillidae
