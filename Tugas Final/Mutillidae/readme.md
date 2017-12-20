@@ -187,6 +187,48 @@ cat crack_cookies.txt
 
 ![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m6_12.png)
 
+15. Login kembali dengan username <b>`samurai`</b> dan klik inspect element pada password
+
+16. Ganti password dnegan `or(1=1 and username='samurai')--`
+
+17. Buka burpsuite dan atur seperti gambar dibawah ini kemudian simpan
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m6_13.png)
+
+18. Menampilkan post data dengan burpsuite kemudain logout dari mutillidae dan tutup browser
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m6_15.png)
+
+19. Uji coba menggunakan curl untuk login
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m6_16.png)
+
+20. Buka kembali browser, matikan proxy, buka Cookies Manager+
+
+21. Tambahkan cookie PHPSESSID
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m6_20.png)
+
+22. Tambahkan cookie showhints
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m6_22.png)
+
+23. Tambahkan cookie username
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m6_23.png)
+
+24. Tambahkan cookie uid
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m6_24.png)
+
+26. Buka mutillidae maka akan didapatkan tampilan sebagai berikut 
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m6_25.png)
+
+27. Proof of lab
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m6_26.png)
+
 ## Lesson 8 - SQL Injection Union Exploit #1
 1. Mencoba melakukan union dengan menggunakan database mutillidae
 `mysql -uroot -psamurai`
