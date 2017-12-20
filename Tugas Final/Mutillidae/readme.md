@@ -229,7 +229,49 @@ cat crack_cookies.txt
 
 ![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m6_26.png)
 
+## Lesson 7 - SQL Injection, Burpsuite, cURL, Perl Parser
+
+1. Buka mutillidae pada browser dan buka user info page serta konfigurasi proxynya menjadi manual proxy seperti yang telah dijelaskan sebelumnya
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m7_04.png)
+
+2. Menjalankan Burpsuite dengan membuka menu Applications -> BackTrack -> Vulnerability Assessment -> Web Application Assesment -> Web Application Proxies -> burpsuite
+Jika muncul pemberitahuan, klik OK
+
+3. Atur proxy pada port 8080 dan matikan intercept
+
+4. Dapatkan userlist tanpa password dengan menginputkan pada nama ` or 1=1-- `
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m7_05.png)
+
+5. Berikut adalah hasilnya
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m7_06.png)
+
+6. Hasil yang diperoleh dari burpsuite adalah sebagai berikut
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m7_07.png)
+
+7. Gunakan cURL untuk menampilkan username dan password
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m7_08.png)
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m7_94.png)
+
+8. Menampilkan hasil
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m7_10.png)
+
+9. Jalankan Perl Script
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m7_12.png)
+
+10. Proof of Lab
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m7_13.png)
+
 ## Lesson 8 - SQL Injection Union Exploit #1
+
 1. Mencoba melakukan union dengan menggunakan database mutillidae
 `mysql -uroot -psamurai`
 `use nowasp;`
@@ -258,6 +300,50 @@ Buka menu proxy -> options dan atur sebagai berikut :
 
 ![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m7_12.jpg)
 
-7. 
+7. Lakukan inspect element
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m8_01.png)
+
+8. Inputkan ` union select null --` pada form nama
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m8_03.png)
+
+9. Error yang dihasilkan adalah sebagai berikut
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m8_04.png)
+
+10. Uji coba selanjutnya, inputkan ` union select null,null,null,null,null,null,null --` pada form name
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m8_05.png)
+
+11. Hasilnya adalah sebagai berikut
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m8_06.png)
+
+12. Selanjutnya dilakukan uji coba menginputkan ` union select 1,2,3,4,5,6,7 --` maka hasilnya adalah
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m8_08.png)
+
+13. Inputkan ` union select ccid,ccnumber,ccv,expiration,null from credit_cards --` maka diperoleh hasil
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m8_10.png)
+
+14. Melihat post data dengan Burp Suite
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m8_11.png)
+
+15. Gunakan cURL untuk menampilkan username dan password
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m8_12.png)
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m8_13.png)
+
+16. Buat hasil dengan melakukan perintah `cat lesson8.txt` kemudian download output parser
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m8_15.png)
+
+17. Jalankan perl script
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m8_16.png)
 
 Referensi : http://www.computersecuritystudent.com/SECURITY_TOOLS/MUTILLIDAE/MUTILLIDAE_2511/lesson8/index.html
