@@ -460,9 +460,9 @@ password = `root`
 
 17. Untuk melihat data dari tabel credit card, ketik perintah berikut
 ```
-echo "show databases;" | mysql -uroot -psamurai
-echo "use nowasp; show tables;" | mysql -uroot -psamurai
-echo "select * from nowasp.credit_cards;" | mysql -uroot -psamurai
+echo "show databases;" | mysql -uroot -proot
+echo "use nowasp; show tables;" | mysql -uroot -proot
+echo "select * from nowasp.credit_cards;" | mysql -uroot -proot
 ```
 ![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m10_13.png)
 
