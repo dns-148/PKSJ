@@ -1,11 +1,14 @@
 # Mutillidae
 
 ## Lesson 5 - Manual SQL Injection with Firebug
+
 1. Jalankan Firefox pada BackTrack
 
 2. Akses `http://ipmutillidae/mutillidae` dari Firefox. IP mutillidae yang digunakan adalah  <b>192.168.56.1</b> sehingga URL yang diakses menjadi `http://192.168.56.1/mutillidae`
 
 ![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m5_01.png)
+
+### Single Quote Test On Username Field
 
 3. Klik Login/Register
 
@@ -17,15 +20,77 @@
 
 ![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m5_03.png)
 
+### By-Pass Password Without Username
+
 6. Ubah isi dari textbox name menjadi <b>`' or 1=1-- `</b>. Tambahkan spasi setelah karakter `-- `
 
 ![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m5_04.png)
 
+7. Klik login dan user akan login sebagai <b>admin</b>
 
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m5_05.png)
 
+8. Logout dari session
 
-Refrensi: http://www.computersecuritystudent.com/SECURITY_TOOLS/MUTILLIDAE/MUTILLIDAE_2511/lesson5/index.html
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m5_06.png)
 
+### Single Quote Test On Password Field
+
+9. Klik Login/Register 
+
+10. Masukkan <b> `samurai` </b> pada textbox Name
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m5_07.png)
+
+10. Klik kanan pada textbox Password dan klik Inspect Element
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m5_08.png)
+
+11. Ubah string <b>`password`</b> 
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m5_09.png)
+
+   menjadi <b>`text`</b>
+   
+ ![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m5_10.png)
+ 
+12. Masukkan tanda <b> `'` </b> pada textbox password lalu klik Login. Maka akan muncul halaman error message.
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/fix1.png)
+
+13. Klik Login/Register
+
+14. Masukkan  <b> `samurai` </b> pada textbox Name
+
+15. Klik kanan pada textbox Password dan klik Inspect Element
+
+16. Ubah string <b>`password`</b> menjadi <b>`text`</b>
+
+17. Masukkan <b>`' or 1=1-- `</b> pada textbox Password. Tambahkan spasi setelah karakter `-- `
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m5_11.png)
+
+18. Klik Login. Maka user akan login sebagai <b>admin</b>, bukan samurai
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m5_12.png)
+
+19. Logout dari session
+
+20. Klik Login/Register
+
+21. Masukkan  <b> `samurai` </b> pada textbox Name
+
+22. Klik kanan pada textbox Password dan klik Inspect Element
+
+23. Ubah string <b>`password`</b> menjadi <b>`text`</b>, <b>`size="20"`</b> menjadi <b>`size="50"`</b>, dan <b>`maxlength="20"`</b> menjadi <b>`maxlength="50"`</b>
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m5_13.png)
+
+24. Masukkan <b>`' or (1=1 and username='samurai')-- `</b> pada textbox Password. Tambahkan spasi setelah karakter `-- `
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m5_14.png)
+
+25. Klik Login dan user akan login sebagai <b>samurai</b>
 
 ## Lesson 8 - SQL Injection Union Exploit #1
 1. Mencoba melakukan union dengan menggunakan database mutillidae
@@ -57,3 +122,5 @@ Buka menu proxy -> options dan atur sebagai berikut :
 ![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m7_12.jpg)
 
 7. 
+
+Refrensi: http://www.computersecuritystudent.com/SECURITY_TOOLS/MUTILLIDAE/MUTILLIDAE_2511/lesson5/index.html
