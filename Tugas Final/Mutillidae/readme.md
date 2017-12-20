@@ -92,16 +92,18 @@
 
 25. Klik Login dan user akan login sebagai <b>samurai</b>
 
+Refrensi: http://www.computersecuritystudent.com/SECURITY_TOOLS/MUTILLIDAE/MUTILLIDAE_2511/lesson5/index.html
+
 ## Lesson 8 - SQL Injection Union Exploit #1
 1. Mencoba melakukan union dengan menggunakan database mutillidae
-mysql -uroot -psamurai
-use nowasp;
-select * from accounts union select ccid,ccnumber,ccv,expiration,null from credit_card;
+`mysql -uroot -psamurai`
+`use nowasp;`
+`select * from accounts union select ccid,ccnumber,ccv,expiration,null from credit_card;`
 
 ![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m7_02.jpg)
 
 2. Mengakses mutillidae melalui browser dari backtrack
-192.168.56.1/mutillidae
+`192.168.56.1/mutillidae`
 
 ![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m5_01.png)
 
@@ -123,4 +125,4 @@ Buka menu proxy -> options dan atur sebagai berikut :
 
 7. 
 
-Refrensi: http://www.computersecuritystudent.com/SECURITY_TOOLS/MUTILLIDAE/MUTILLIDAE_2511/lesson5/index.html
+Referensi : http://www.computersecuritystudent.com/SECURITY_TOOLS/MUTILLIDAE/MUTILLIDAE_2511/lesson8/index.html
