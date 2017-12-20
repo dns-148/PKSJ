@@ -5,7 +5,7 @@ Repo tugas-tugas PKSJ
 
 [Tugas 2 - SQL Injection](https://github.com/dns-148/PKSJ/blob/master/Tugas%202/readme.md)
 
-[Tugas Final](https://github.com/dns-148/PKSJ/edit/master/Tugas%20Final/readme.md)
+[Tugas Final](https://github.com/dns-148/PKSJ/blob/master/Tugas%20Final/readme.md)
 
 
 ### Anggota Kelompok
