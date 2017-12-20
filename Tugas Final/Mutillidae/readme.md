@@ -25,3 +25,35 @@
 
 
 Refrensi: http://www.computersecuritystudent.com/SECURITY_TOOLS/MUTILLIDAE/MUTILLIDAE_2511/lesson5/index.html
+
+
+## Lesson 8 - SQL Injection Union Exploit #1
+1. Mencoba melakukan union dengan menggunakan database mutillidae
+mysql -uroot -psamurai
+use nowasp;
+select * from accounts union select ccid,ccnumber,ccv,expiration,null from credit_card;
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m7_02.jpg)
+
+2. Mengakses mutillidae melalui browser dari backtrack
+192.168.56.1/mutillidae
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m5_01.png)
+
+3. Membuka user info pada menu OWASP Top 10 -> SQL Injection -> SQLi-Extract Data -> User Info
+
+4. Mengatur proxy pada menu Edit -> Preferences -> Advanced -> Network -> Tombol Setting menjadi sebagai berikut 
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m7_09.jpg)
+
+5. Menjalankan Burpsuite dengan membuka menu Applications -> BackTrack -> Vulnerability Assessment -> Web Application Assesment -> Web Application Proxies -> burpsuite
+Jika muncul pemberitahuan, klik OK
+Buka menu proxy -> options dan atur sebagai berikut :
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m7_17.jpg)
+
+6. Matikan intercept
+
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Mutillidae/Screenshot/m7_12.jpg)
+
+7. 
