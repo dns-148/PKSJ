@@ -173,7 +173,7 @@ atau snort --pcap-single=nama_file_pcap.pcap
 4. Atau jalankan perintah berikut untuk banyak file:
 
 ``` 
-sudo snort -v -i etho0 -c /etc/snort/snort.conf snort --pcap-filter="*.pcap" --pcap-dir=/home/kartuhitam/Downloads/opclever
+sudo snort -v -i etho0 -c /etc/snort/snort.conf --pcap-filter="*.pcap" --pcap-dir=/home/kartuhitam/Downloads/opclever
 ``` 
 
 ![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Bonus/Screenshot/snort_00.png)
