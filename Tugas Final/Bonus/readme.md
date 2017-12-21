@@ -176,7 +176,10 @@ atau snort --pcap-single=nama_file_pcap.pcap
 sudo snort -v -i etho0 -c /etc/snort/snort.conf snort --pcap-filter="*.pcap" --pcap-dir=/home/kartuhitam/Downloads/opclever
 ``` 
 
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Bonus/Screenshot/snort_00.png)
 ![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Bonus/Screenshot/snort_01.png)
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Bonus/Screenshot/snort_02.2.png)
+![](https://raw.githubusercontent.com/dns-148/PKSJ/master/Tugas%20Final/Bonus/Screenshot/snort_03.png)
 
 
 
